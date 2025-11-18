@@ -1,58 +1,63 @@
-import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { useState } from 'react'
+import { Search, Menu, X } from 'lucide-react'
 
 const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
-  ]
-
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-nav' : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-cyber-red rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">CG</span>
+    <nav className="fixed top-0 left-0 right-0 z-50 p-6 sm:p-8 lg:p-12">
+      <div className="max-w-[1400px] mx-auto">
+        {/* Navigation Container */}
+        <div className="bg-plant-green-dark/90 backdrop-blur-xl border border-white/20 rounded-full px-6 py-4 flex items-center justify-between">
+          {/* Left: Logo + Nav */}
+          <div className="flex items-center gap-4">
+            {/* Logo */}
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-plant-green-dark">
+                <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.5"/>
+                <path d="M12 8v8M8 12h8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
             </div>
-            <span className="text-white font-bold text-xl">CyberGenius</span>
+
+            {/* Desktop Nav Links */}
+            <div className="hidden md:flex items-center gap-2">
+              <a
+                href="#home"
+                className="px-6 py-2.5 bg-white text-plant-green-dark rounded-full font-medium transition-all duration-300 hover:bg-plant-cream"
+              >
+                Home
+              </a>
+              <a
+                href="#contact"
+                className="px-6 py-2.5 text-white rounded-full font-medium hover:bg-white/10 transition-all duration-300"
+              >
+                Contact
+              </a>
+              <a
+                href="#blog"
+                className="px-6 py-2.5 text-white rounded-full font-medium hover:bg-white/10 transition-all duration-300"
+              >
+                Blog
+              </a>
+            </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-text-secondary hover:text-cyber-red transition-colors duration-300 font-medium"
-              >
-                {link.name}
-              </a>
-            ))}
+          {/* Right: Search + Shop + Login */}
+          <div className="hidden md:flex items-center gap-2">
+            <button className="w-11 h-11 rounded-full flex items-center justify-center text-white hover:bg-white/10 transition-all duration-300">
+              <Search size={22} />
+            </button>
             <a
-              href="#contact"
-              className="bg-cyber-red hover:bg-cyber-red-dark text-white px-6 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-cyber-red/50"
+              href="#shop"
+              className="px-6 py-2.5 text-white rounded-full font-medium hover:bg-white/10 transition-all duration-300"
             >
-              Get Started
+              Shop
+            </a>
+            <a
+              href="#login"
+              className="px-6 py-2.5 text-white rounded-full font-medium hover:bg-white/10 transition-all duration-300"
+            >
+              Log in
             </a>
           </div>
 
@@ -64,32 +69,52 @@ const Navigation = () => {
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden glass-nav border-t border-white/10">
-          <div className="px-4 py-6 space-y-4">
-            {navLinks.map((link) => (
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-4 bg-plant-green-dark/90 backdrop-blur-xl border border-white/20 rounded-3xl p-6">
+            <div className="space-y-3">
               <a
-                key={link.name}
-                href={link.href}
+                href="#home"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-text-secondary hover:text-cyber-red transition-colors duration-300 font-medium py-2"
+                className="block px-6 py-3 bg-white text-plant-green-dark rounded-full font-medium text-center"
               >
-                {link.name}
+                Home
               </a>
-            ))}
-            <a
-              href="#contact"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block bg-cyber-red hover:bg-cyber-red-dark text-white px-6 py-2.5 rounded-full transition-all duration-300 text-center"
-            >
-              Get Started
-            </a>
+              <a
+                href="#contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-6 py-3 text-white rounded-full font-medium hover:bg-white/10 transition-all duration-300 text-center"
+              >
+                Contact
+              </a>
+              <a
+                href="#blog"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block px-6 py-3 text-white rounded-full font-medium hover:bg-white/10 transition-all duration-300 text-center"
+              >
+                Blog
+              </a>
+              <div className="pt-3 border-t border-white/20 space-y-3">
+                <a
+                  href="#shop"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-6 py-3 text-white rounded-full font-medium hover:bg-white/10 transition-all duration-300 text-center"
+                >
+                  Shop
+                </a>
+                <a
+                  href="#login"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block px-6 py-3 text-white rounded-full font-medium hover:bg-white/10 transition-all duration-300 text-center"
+                >
+                  Log in
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </nav>
   )
 }

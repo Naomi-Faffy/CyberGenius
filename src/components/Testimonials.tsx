@@ -46,7 +46,7 @@ const Testimonials = () => {
         }}></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full px-6 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-2 bg-cyber-red/20 border border-cyber-red/30 rounded-full text-cyber-red-light text-sm font-medium mb-4">
@@ -61,7 +61,7 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}

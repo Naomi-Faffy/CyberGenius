@@ -2,59 +2,48 @@
 
 /* Color Variables */
 @theme inline {
-  /* Brand Colors from Logo */
-  --color-cyber-red: #dc2626;
-  --color-cyber-red-dark: #991b1b;
-  --color-cyber-red-light: #ef4444;
-  --color-cyber-black: #0a0a0a;
-  --color-cyber-gray: #1a1a1a;
-  --color-cyber-gray-light: #2a2a2a;
+  /* Plant Shop Brand Colors */
+  --color-plant-green: #1a4d2e;
+  --color-plant-green-dark: #0f3320;
+  --color-plant-green-light: #2d6a4f;
+  --color-plant-teal: #4a8b7f;
+  --color-plant-teal-light: #5fa99b;
+  --color-plant-cream: #f5f3f0;
+  --color-plant-white: #ffffff;
   
   /* Glassmorphism Colors */
-  --color-glass-white: rgba(255, 255, 255, 0.1);
-  --color-glass-white-border: rgba(255, 255, 255, 0.2);
-  --color-glass-dark: rgba(0, 0, 0, 0.3);
-  --color-glass-red: rgba(220, 38, 38, 0.1);
+  --color-glass-dark-green: rgba(26, 77, 46, 0.7);
+  --color-glass-dark-green-border: rgba(255, 255, 255, 0.2);
+  --color-glass-light: rgba(255, 255, 255, 0.1);
+  --color-glass-light-border: rgba(255, 255, 255, 0.3);
   
   /* Semantic Colors */
   --color-text-primary: #ffffff;
-  --color-text-secondary: #d1d5db;
-  --color-text-muted: #9ca3af;
+  --color-text-secondary: #e8f5e9;
+  --color-text-muted: #c8e6c9;
+  --color-text-dark: #1a4d2e;
 }
 
 /* Custom Utilities */
-@utility glass-card {
-  background: rgba(255, 255, 255, 0.05);
+@utility glass-card-plant {
+  background: rgba(26, 77, 46, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 24px;
 }
 
-@utility glass-card-hover {
-  &:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(220, 38, 38, 0.3);
-    transform: translateY(-4px);
-  }
-}
-
-@utility glass-nav {
-  background: rgba(10, 10, 10, 0.8);
+@utility glass-card-light {
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
 }
 
-@utility text-gradient-red {
-  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
-@utility bg-gradient-dark {
-  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+@utility bg-gradient-teal {
+  background: linear-gradient(135deg, #4a8b7f 0%, #5fa99b 100%);
 }
 
 @utility scrollbar-hidden {
@@ -76,7 +65,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #0a0a0a;
+  background: #4a8b7f;
   color: #ffffff;
   overflow-x: hidden;
 }
