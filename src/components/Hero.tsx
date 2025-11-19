@@ -5,7 +5,7 @@ const Hero = () => {
     <section id="home" className="relative min-h-screen w-full overflow-hidden">
       {/* Split Background */}
       <div className="absolute inset-0 flex">
-        {/* Left Half - Darker with blur */}
+        {/* Left Half - Darker with blur (GLASS BASE) */}
         <div className="w-1/2 relative">
           <img
             src="https://images.unsplash.com/photo-1657622185369-a5a0190f151e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw1fHxjaXJjdWl0JTIwYm9hcmQlMjByZWQlMjBwYXRod2F5cyUyMHRlY2hub2xvZ3klMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwwfDF8fHJlZHwxNzYzNTQ2MjAwfDA&ixlib=rb-4.1.0&q=85"
@@ -13,13 +13,21 @@ const Hero = () => {
             className="w-full h-full object-cover"
             style={{
               backgroundColor: '#f30c0c',
-              filter: 'blur(4px) brightness(0.35) saturate(0.7)'
+              filter: 'blur(8px) brightness(0.3) saturate(0.6)'
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
+          {/* Glassmorphism overlay - translucent dark with gradient */}
+          <div 
+            className="absolute inset-0" 
+            style={{
+              background: 'linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 70%, rgba(0, 0, 0, 0.2) 100%)',
+              backdropFilter: 'blur(4px)',
+              WebkitBackdropFilter: 'blur(4px)'
+            }}
+          ></div>
         </div>
 
-        {/* Right Half - Bright and crisp */}
+        {/* Right Half - Bright and crisp (NO BLUR) */}
         <div className="w-1/2 relative">
           <img
             src="https://images.unsplash.com/photo-1657622185369-a5a0190f151e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw1fHxjaXJjdWl0JTIwYm9hcmQlMjByZWQlMjBwYXRod2F5cyUyMHRlY2hub2xvZ3klMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwwfDF8fHJlZHwxNzYzNTQ2MjAwfDA&ixlib=rb-4.1.0&q=85"
@@ -27,11 +35,20 @@ const Hero = () => {
             className="w-full h-full object-cover"
             style={{
               backgroundColor: '#f30c0c',
-              filter: 'brightness(1.3) saturate(1.6) contrast(1.15)'
+              filter: 'brightness(1.4) saturate(1.7) contrast(1.2)'
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-black/10"></div>
         </div>
+
+        {/* Glass edge highlight - center vertical glow */}
+        <div 
+          className="absolute top-0 bottom-0 left-1/2 w-1 -translate-x-1/2"
+          style={{
+            background: 'linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.15) 80%, transparent 100%)',
+            boxShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
+            filter: 'blur(2px)'
+          }}
+        ></div>
       </div>
 
       {/* Content */}
@@ -137,8 +154,8 @@ const Hero = () => {
         <div className="w-full max-w-[1800px] mx-auto">
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-12">
             
-            {/* Info Card - Bottom Left */}
-            <div className="bg-black/65 backdrop-blur-xl border border-white/20 rounded-3xl p-10 max-w-lg w-full lg:w-auto">
+            {/* Info Card - Bottom Left (STRONG GLASSMORPHISM) */}
+            <div className="glass-panel-strong rounded-3xl p-10 max-w-lg w-full lg:w-auto shadow-2xl">
               <div className="space-y-6">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 bg-cyber-red-neon rounded-full"></div>
@@ -175,20 +192,29 @@ const Hero = () => {
 
             {/* Navigation Controls - Bottom Right */}
             <div className="flex items-center gap-6">
-              {/* Vertical Slider Indicator */}
+              {/* Vertical Slider Indicator (LIGHT GLASS) */}
               <div className="flex flex-col items-center gap-4 relative">
-                <div className="w-[1px] h-28 bg-white/20 absolute top-0"></div>
-                <button className="w-4 h-4 rotate-45 border-2 border-white/40 hover:border-white transition-all relative z-10 bg-transparent"></button>
-                <button className="w-4 h-4 rotate-45 bg-white border-2 border-white relative z-10"></button>
-                <button className="w-4 h-4 rotate-45 border-2 border-white/40 hover:border-white transition-all relative z-10 bg-transparent"></button>
+                <div className="w-[1px] h-28 bg-gradient-to-b from-transparent via-white/30 to-transparent absolute top-0"></div>
+                <button 
+                  className="w-4 h-4 rotate-45 border-2 border-white/50 hover:border-white transition-all relative z-10 bg-transparent backdrop-blur-sm"
+                  style={{ boxShadow: '0 0 8px rgba(255, 255, 255, 0.1)' }}
+                ></button>
+                <button 
+                  className="w-4 h-4 rotate-45 bg-white/90 border-2 border-white relative z-10 backdrop-blur-sm"
+                  style={{ boxShadow: '0 0 12px rgba(255, 255, 255, 0.3)' }}
+                ></button>
+                <button 
+                  className="w-4 h-4 rotate-45 border-2 border-white/50 hover:border-white transition-all relative z-10 bg-transparent backdrop-blur-sm"
+                  style={{ boxShadow: '0 0 8px rgba(255, 255, 255, 0.1)' }}
+                ></button>
               </div>
 
-              {/* Arrow Buttons - Different backgrounds like reference */}
+              {/* Arrow Buttons - GLASSMORPHISM BUTTONS */}
               <div className="flex gap-3">
-                <button className="w-16 h-16 rounded-lg bg-white/15 backdrop-blur-sm border border-white/30 flex items-center justify-center hover:bg-white/25 transition-all shadow-lg">
+                <button className="w-16 h-16 rounded-lg glass-button flex items-center justify-center hover:bg-white/20 transition-all">
                   <ChevronLeft className="text-white" size={28} strokeWidth={1.5} />
                 </button>
-                <button className="w-16 h-16 rounded-lg bg-black/50 backdrop-blur-sm border border-white/30 flex items-center justify-center hover:bg-black/70 transition-all shadow-lg">
+                <button className="w-16 h-16 rounded-lg glass-button-dark flex items-center justify-center hover:bg-black/60 transition-all">
                   <ChevronRight className="text-white" size={28} strokeWidth={1.5} />
                 </button>
               </div>
@@ -197,14 +223,23 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Vertical Page Indicator - Right Center */}
+      {/* Vertical Page Indicator - Right Center (LIGHT GLASS EFFECT) */}
       <div className="absolute right-12 top-1/2 -translate-y-1/2 z-20 hidden xl:block">
         <div className="flex flex-col items-center gap-5">
-          <div className="w-[1px] h-20 bg-white/20"></div>
-          <button className="w-4 h-4 rotate-45 border-2 border-white/40 hover:border-white transition-all bg-transparent"></button>
-          <button className="w-4 h-4 rotate-45 bg-white border-2 border-white"></button>
-          <button className="w-4 h-4 rotate-45 border-2 border-white/40 hover:border-white transition-all bg-transparent"></button>
-          <div className="w-[1px] h-20 bg-white/20"></div>
+          <div className="w-[1px] h-20 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+          <button 
+            className="w-4 h-4 rotate-45 border-2 border-white/50 hover:border-white transition-all bg-transparent backdrop-blur-sm"
+            style={{ boxShadow: '0 0 8px rgba(255, 255, 255, 0.1)' }}
+          ></button>
+          <button 
+            className="w-4 h-4 rotate-45 bg-white/90 border-2 border-white backdrop-blur-sm"
+            style={{ boxShadow: '0 0 12px rgba(255, 255, 255, 0.3)' }}
+          ></button>
+          <button 
+            className="w-4 h-4 rotate-45 border-2 border-white/50 hover:border-white transition-all bg-transparent backdrop-blur-sm"
+            style={{ boxShadow: '0 0 8px rgba(255, 255, 255, 0.1)' }}
+          ></button>
+          <div className="w-[1px] h-20 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
         </div>
       </div>
     </section>
