@@ -2,116 +2,86 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen w-full overflow-hidden">
-      {/* Split Background */}
-      <div className="absolute inset-0 flex">
-        {/* Left Half - Darker with blur (GLASS BASE) */}
-        <div className="w-1/2 relative">
-          <img
-            src="https://images.unsplash.com/photo-1657622185369-a5a0190f151e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw1fHxjaXJjdWl0JTIwYm9hcmQlMjByZWQlMjBwYXRod2F5cyUyMHRlY2hub2xvZ3klMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwwfDF8fHJlZHwxNzYzNTQ2MjAwfDA&ixlib=rb-4.1.0&q=85"
-            alt="Dark circuit board with glowing red pathways by Eugene Golovesov on Unsplash"
-            className="w-full h-full object-cover"
-            style={{
-              backgroundColor: '#f30c0c',
-              filter: 'blur(8px) brightness(0.3) saturate(0.6)'
-            }}
-          />
-          {/* Glassmorphism overlay - translucent dark with gradient */}
+    <section id="home" className="relative w-full h-screen overflow-hidden">
+      {/* Background - Split into two halves */}
+      <div className="absolute inset-0">
+        {/* Left Half - Blurred, dark, glassmorphism base */}
+        <div className="absolute top-0 left-0 w-1/2 h-full">
           <div 
-            className="absolute inset-0" 
+            className="absolute inset-0"
             style={{
-              background: 'linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 70%, rgba(0, 0, 0, 0.2) 100%)',
-              backdropFilter: 'blur(4px)',
-              WebkitBackdropFilter: 'blur(4px)'
+              backgroundImage: 'url(https://images.unsplash.com/photo-1657622185369-a5a0190f151e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw1fHxjaXJjdWl0JTIwYm9hcmQlMjByZWQlMjBwYXRod2F5cyUyMHRlY2hub2xvZ3klMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwwfDF8fHJlZHwxNzYzNTQ2MjAwfDA&ixlib=rb-4.1.0&q=85)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              filter: 'blur(10px) brightness(0.25) saturate(0.5)'
             }}
-          ></div>
-        </div>
-
-        {/* Right Half - Bright and crisp (NO BLUR) */}
-        <div className="w-1/2 relative">
-          <img
-            src="https://images.unsplash.com/photo-1657622185369-a5a0190f151e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw1fHxjaXJjdWl0JTIwYm9hcmQlMjByZWQlMjBwYXRod2F5cyUyMHRlY2hub2xvZ3klMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwwfDF8fHJlZHwxNzYzNTQ2MjAwfDA&ixlib=rb-4.1.0&q=85"
-            alt="Dark circuit board with glowing red pathways by Eugene Golovesov on Unsplash"
-            className="w-full h-full object-cover"
+          />
+          {/* Glassmorphism overlay */}
+          <div 
+            className="absolute inset-0"
             style={{
-              backgroundColor: '#f30c0c',
-              filter: 'brightness(1.4) saturate(1.7) contrast(1.2)'
+              background: 'linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))',
+              backdropFilter: 'blur(6px)',
+              WebkitBackdropFilter: 'blur(6px)'
             }}
           />
         </div>
 
-        {/* Glass edge highlight - center vertical glow */}
+        {/* Right Half - Bright, crisp, no blur */}
+        <div className="absolute top-0 right-0 w-1/2 h-full">
+          <div 
+            className="absolute inset-0"
+            style={{
+              backgroundImage: 'url(https://images.unsplash.com/photo-1657622185369-a5a0190f151e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw1fHxjaXJjdWl0JTIwYm9hcmQlMjByZWQlMjBwYXRod2F5cyUyMHRlY2hub2xvZ3klMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwwfDF8fHJlZHwxNzYzNTQ2MjAwfDA&ixlib=rb-4.1.0&q=85)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              filter: 'brightness(1.5) saturate(1.8) contrast(1.2)'
+            }}
+          />
+        </div>
+
+        {/* Center glass edge highlight */}
         <div 
-          className="absolute top-0 bottom-0 left-1/2 w-1 -translate-x-1/2"
+          className="absolute top-0 bottom-0 left-1/2 w-px"
           style={{
-            background: 'linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.15) 80%, transparent 100%)',
-            boxShadow: '0 0 30px rgba(255, 255, 255, 0.1)',
-            filter: 'blur(2px)'
+            background: 'linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2) 30%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.2) 70%, transparent)',
+            boxShadow: '0 0 40px rgba(255, 255, 255, 0.15)',
+            transform: 'translateX(-50%)'
           }}
-        ></div>
+        />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 min-h-screen flex flex-col justify-between px-12 lg:px-16 py-36 pb-16">
-        
-        {/* Main Content Area - Centered */}
-        <div className="flex-1 flex items-center">
-          <div className="w-full max-w-[1800px] mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-              
-              {/* Left Column - Typography */}
-              <div className="flex flex-col justify-center space-y-12 pr-0 lg:pr-24">
-                
-                {/* Section Label */}
-                <p 
-                  className="text-white/80 text-sm uppercase tracking-wider"
-                  style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, letterSpacing: '0.2em' }}
-                >
-                  AMAZING SOLUTIONS
-                </p>
-                
-                {/* Main Headline - Split Design */}
-                <div className="space-y-2">
-                  {/* CYBER (textured) + SECURITY (white) */}
-                  <div className="flex items-baseline flex-wrap gap-8">
-                    <h1 
-                      className="leading-none"
-                      style={{ 
-                        fontFamily: 'Bebas Neue, sans-serif',
-                        fontSize: 'clamp(100px, 20vw, 280px)',
-                        fontWeight: 700,
-                        letterSpacing: '0.02em',
-                        backgroundImage: 'url(https://images.unsplash.com/photo-1657622185369-a5a0190f151e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw1fHxjaXJjdWl0JTIwYm9hcmQlMjByZWQlMjBwYXRod2F5cyUyMHRlY2hub2xvZ3klMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwwfDF8fHJlZHwxNzYzNTQ2MjAwfDA&ixlib=rb-4.1.0&q=85)',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundClip: 'text',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        filter: 'brightness(2.2) contrast(1.6) saturate(2)'
-                      }}
-                    >
-                      CYBER
-                    </h1>
-                    <h1 
-                      className="text-white leading-none"
-                      style={{ 
-                        fontFamily: 'Bebas Neue, sans-serif',
-                        fontSize: 'clamp(100px, 20vw, 280px)',
-                        fontWeight: 700,
-                        letterSpacing: '0.02em'
-                      }}
-                    >
-                      SECURITY
-                    </h1>
-                  </div>
-                  
-                  {/* SOLUTIONS (textured, larger) */}
+      {/* Content Container */}
+      <div className="relative z-10 h-full flex flex-col">
+        {/* Main Content - Vertically Centered */}
+        <div className="flex-1 flex items-center px-16 xl:px-24">
+          <div className="w-full max-w-[1920px] mx-auto">
+            {/* Left side content only */}
+            <div className="max-w-3xl">
+              {/* Section Label */}
+              <p 
+                className="text-white/80 mb-8"
+                style={{ 
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontSize: '14px',
+                  fontWeight: 300,
+                  letterSpacing: '0.3em',
+                  textTransform: 'uppercase'
+                }}
+              >
+                AMAZING SOLUTIONS
+              </p>
+
+              {/* Main Headline */}
+              <div className="mb-12">
+                {/* First line: CYBER (textured) + SECURITY (white) */}
+                <div className="flex flex-wrap items-baseline gap-8 mb-4">
                   <h1 
-                    className="leading-none"
-                    style={{ 
+                    style={{
                       fontFamily: 'Bebas Neue, sans-serif',
-                      fontSize: 'clamp(110px, 22vw, 300px)',
-                      fontWeight: 700,
+                      fontSize: 'clamp(120px, 22vw, 320px)',
+                      fontWeight: 400,
+                      lineHeight: 0.85,
                       letterSpacing: '0.02em',
                       backgroundImage: 'url(https://images.unsplash.com/photo-1657622185369-a5a0190f151e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw1fHxjaXJjdWl0JTIwYm9hcmQlMjByZWQlMjBwYXRod2F5cyUyMHRlY2hub2xvZ3klMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwwfDF8fHJlZHwxNzYzNTQ2MjAwfDA&ixlib=rb-4.1.0&q=85)',
                       backgroundSize: 'cover',
@@ -119,102 +89,210 @@ const Hero = () => {
                       backgroundClip: 'text',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
-                      filter: 'brightness(2.2) contrast(1.6) saturate(2)'
+                      filter: 'brightness(2.5) contrast(1.8) saturate(2.2)'
                     }}
                   >
-                    SOLUTIONS
+                    CYBER
+                  </h1>
+                  <h1 
+                    className="text-white"
+                    style={{
+                      fontFamily: 'Bebas Neue, sans-serif',
+                      fontSize: 'clamp(120px, 22vw, 320px)',
+                      fontWeight: 400,
+                      lineHeight: 0.85,
+                      letterSpacing: '0.02em'
+                    }}
+                  >
+                    SECURITY
                   </h1>
                 </div>
 
-                {/* Subtext - Elegant Serif */}
-                <p 
-                  className="text-white/75 text-lg max-w-xl leading-relaxed italic"
-                  style={{ fontFamily: 'Playfair Display, serif', fontWeight: 300, lineHeight: '1.8' }}
+                {/* Second line: SOLUTIONS (textured, larger) */}
+                <h1 
+                  style={{
+                    fontFamily: 'Bebas Neue, sans-serif',
+                    fontSize: 'clamp(130px, 24vw, 350px)',
+                    fontWeight: 400,
+                    lineHeight: 0.85,
+                    letterSpacing: '0.02em',
+                    backgroundImage: 'url(https://images.unsplash.com/photo-1657622185369-a5a0190f151e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw1fHxjaXJjdWl0JTIwYm9hcmQlMjByZWQlMjBwYXRod2F5cyUyMHRlY2hub2xvZ3klMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwwfDF8fHJlZHwxNzYzNTQ2MjAwfDA&ixlib=rb-4.1.0&q=85)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    filter: 'brightness(2.5) contrast(1.8) saturate(2.2)'
+                  }}
                 >
-                  There is a moment in the life of any aspiring organization that it is time to secure their digital future.
-                </p>
-
-                {/* CTA */}
-                <a 
-                  href="#services" 
-                  className="text-white text-sm uppercase tracking-wider hover:text-cyber-red-neon transition-colors inline-block underline underline-offset-8 decoration-1 w-fit"
-                  style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 500, letterSpacing: '0.15em' }}
-                >
-                  LEARN MORE
-                </a>
+                  SOLUTIONS
+                </h1>
               </div>
 
-              {/* Right Column - Empty for balance */}
-              <div className="hidden lg:block"></div>
+              {/* Subtext - Elegant serif */}
+              <p 
+                className="text-white/75 mb-10 max-w-xl"
+                style={{
+                  fontFamily: 'Playfair Display, serif',
+                  fontSize: '20px',
+                  fontWeight: 300,
+                  fontStyle: 'italic',
+                  lineHeight: 1.8
+                }}
+              >
+                There is a moment in the life of any aspiring organization that it is time to secure their digital future.
+              </p>
+
+              {/* CTA */}
+              <a 
+                href="#services"
+                className="inline-block text-white hover:text-cyber-red-neon transition-colors"
+                style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontSize: '14px',
+                  fontWeight: 500,
+                  letterSpacing: '0.2em',
+                  textTransform: 'uppercase',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '8px'
+                }}
+              >
+                LEARN MORE
+              </a>
             </div>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="w-full max-w-[1800px] mx-auto">
-          <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-12">
-            
-            {/* Info Card - Bottom Left (STRONG GLASSMORPHISM) */}
-            <div className="glass-panel-strong rounded-3xl p-10 max-w-lg w-full lg:w-auto shadow-2xl">
-              <div className="space-y-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-cyber-red-neon rounded-full"></div>
-                  <span 
-                    className="text-cyber-red-neon text-xs uppercase tracking-wider"
-                    style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, letterSpacing: '0.25em' }}
-                  >
-                    PREMIUM PROTECTION
-                  </span>
-                </div>
-                
-                <h3 
-                  className="text-white font-bold text-2xl leading-tight"
-                  style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}
+        <div className="px-16 xl:px-24 pb-16">
+          <div className="w-full max-w-[1920px] mx-auto flex items-end justify-between">
+            {/* Info Card - Bottom Left */}
+            <div 
+              className="rounded-3xl p-10 max-w-lg"
+              style={{
+                background: 'rgba(0, 0, 0, 0.5)',
+                backdropFilter: 'blur(24px) saturate(180%)',
+                WebkitBackdropFilter: 'blur(24px) saturate(180%)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)'
+              }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-3 h-3 rounded-full bg-cyber-red-neon" />
+                <span 
+                  className="text-cyber-red-neon"
+                  style={{
+                    fontFamily: 'Montserrat, sans-serif',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    letterSpacing: '0.3em',
+                    textTransform: 'uppercase'
+                  }}
                 >
-                  Advanced Cybersecurity Solutions
-                </h3>
-                
-                <p 
-                  className="text-white/70 text-base leading-relaxed"
-                  style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400, lineHeight: '1.7' }}
-                >
-                  Bridging communities and technology across Africa. We deliver world-class cybersecurity, governance, and digital transformation services tailored to the African business environment.
-                </p>
-
-                <button 
-                  className="px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white text-sm rounded-full border border-white/30 transition-all"
-                  style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}
-                >
-                  View Details
-                </button>
+                  PREMIUM PROTECTION
+                </span>
               </div>
+
+              <h3 
+                className="text-white mb-6"
+                style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontSize: '26px',
+                  fontWeight: 700,
+                  lineHeight: 1.3
+                }}
+              >
+                Advanced Cybersecurity Solutions
+              </h3>
+
+              <p 
+                className="text-white/70 mb-8"
+                style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontSize: '16px',
+                  fontWeight: 400,
+                  lineHeight: 1.7
+                }}
+              >
+                Bridging communities and technology across Africa. We deliver world-class cybersecurity, governance, and digital transformation services.
+              </p>
+
+              <button 
+                className="px-8 py-3.5 text-white rounded-full transition-all"
+                style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontSize: '14px',
+                  fontWeight: 600,
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  border: '1px solid rgba(255, 255, 255, 0.3)',
+                  backdropFilter: 'blur(8px)'
+                }}
+              >
+                View Details
+              </button>
             </div>
 
             {/* Navigation Controls - Bottom Right */}
             <div className="flex items-center gap-6">
-              {/* Vertical Slider Indicator (LIGHT GLASS) */}
-              <div className="flex flex-col items-center gap-4 relative">
-                <div className="w-[1px] h-28 bg-gradient-to-b from-transparent via-white/30 to-transparent absolute top-0"></div>
+              {/* Vertical slider indicator */}
+              <div className="flex flex-col items-center gap-5 relative">
+                <div 
+                  className="w-px h-32 absolute top-0"
+                  style={{
+                    background: 'linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.3) 30%, rgba(255, 255, 255, 0.3) 70%, transparent)'
+                  }}
+                />
                 <button 
-                  className="w-4 h-4 rotate-45 border-2 border-white/50 hover:border-white transition-all relative z-10 bg-transparent backdrop-blur-sm"
-                  style={{ boxShadow: '0 0 8px rgba(255, 255, 255, 0.1)' }}
-                ></button>
+                  className="w-4 h-4 rotate-45 relative z-10 transition-all"
+                  style={{
+                    background: 'transparent',
+                    border: '2px solid rgba(255, 255, 255, 0.5)',
+                    backdropFilter: 'blur(4px)',
+                    boxShadow: '0 0 8px rgba(255, 255, 255, 0.1)'
+                  }}
+                />
                 <button 
-                  className="w-4 h-4 rotate-45 bg-white/90 border-2 border-white relative z-10 backdrop-blur-sm"
-                  style={{ boxShadow: '0 0 12px rgba(255, 255, 255, 0.3)' }}
-                ></button>
+                  className="w-4 h-4 rotate-45 relative z-10"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.95)',
+                    border: '2px solid white',
+                    backdropFilter: 'blur(4px)',
+                    boxShadow: '0 0 16px rgba(255, 255, 255, 0.4)'
+                  }}
+                />
                 <button 
-                  className="w-4 h-4 rotate-45 border-2 border-white/50 hover:border-white transition-all relative z-10 bg-transparent backdrop-blur-sm"
-                  style={{ boxShadow: '0 0 8px rgba(255, 255, 255, 0.1)' }}
-                ></button>
+                  className="w-4 h-4 rotate-45 relative z-10 transition-all"
+                  style={{
+                    background: 'transparent',
+                    border: '2px solid rgba(255, 255, 255, 0.5)',
+                    backdropFilter: 'blur(4px)',
+                    boxShadow: '0 0 8px rgba(255, 255, 255, 0.1)'
+                  }}
+                />
               </div>
 
-              {/* Arrow Buttons - GLASSMORPHISM BUTTONS */}
+              {/* Arrow buttons */}
               <div className="flex gap-3">
-                <button className="w-16 h-16 rounded-lg glass-button flex items-center justify-center hover:bg-white/20 transition-all">
+                <button 
+                  className="w-16 h-16 rounded-lg flex items-center justify-center transition-all"
+                  style={{
+                    background: 'rgba(255, 255, 255, 0.15)',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255, 255, 255, 0.25)',
+                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)'
+                  }}
+                >
                   <ChevronLeft className="text-white" size={28} strokeWidth={1.5} />
                 </button>
-                <button className="w-16 h-16 rounded-lg glass-button-dark flex items-center justify-center hover:bg-black/60 transition-all">
+                <button 
+                  className="w-16 h-16 rounded-lg flex items-center justify-center transition-all"
+                  style={{
+                    background: 'rgba(0, 0, 0, 0.5)',
+                    backdropFilter: 'blur(10px)',
+                    border: '1px solid rgba(255, 255, 255, 0.25)',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)'
+                  }}
+                >
                   <ChevronRight className="text-white" size={28} strokeWidth={1.5} />
                 </button>
               </div>
@@ -223,23 +301,48 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Vertical Page Indicator - Right Center (LIGHT GLASS EFFECT) */}
-      <div className="absolute right-12 top-1/2 -translate-y-1/2 z-20 hidden xl:block">
-        <div className="flex flex-col items-center gap-5">
-          <div className="w-[1px] h-20 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+      {/* Right-side vertical indicator */}
+      <div className="absolute right-16 top-1/2 -translate-y-1/2 z-20 hidden xl:block">
+        <div className="flex flex-col items-center gap-6">
+          <div 
+            className="w-px h-24"
+            style={{
+              background: 'linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.3) 30%, rgba(255, 255, 255, 0.3) 70%, transparent)'
+            }}
+          />
           <button 
-            className="w-4 h-4 rotate-45 border-2 border-white/50 hover:border-white transition-all bg-transparent backdrop-blur-sm"
-            style={{ boxShadow: '0 0 8px rgba(255, 255, 255, 0.1)' }}
-          ></button>
+            className="w-4 h-4 rotate-45 transition-all"
+            style={{
+              background: 'transparent',
+              border: '2px solid rgba(255, 255, 255, 0.5)',
+              backdropFilter: 'blur(4px)',
+              boxShadow: '0 0 8px rgba(255, 255, 255, 0.1)'
+            }}
+          />
           <button 
-            className="w-4 h-4 rotate-45 bg-white/90 border-2 border-white backdrop-blur-sm"
-            style={{ boxShadow: '0 0 12px rgba(255, 255, 255, 0.3)' }}
-          ></button>
+            className="w-4 h-4 rotate-45"
+            style={{
+              background: 'rgba(255, 255, 255, 0.95)',
+              border: '2px solid white',
+              backdropFilter: 'blur(4px)',
+              boxShadow: '0 0 16px rgba(255, 255, 255, 0.4)'
+            }}
+          />
           <button 
-            className="w-4 h-4 rotate-45 border-2 border-white/50 hover:border-white transition-all bg-transparent backdrop-blur-sm"
-            style={{ boxShadow: '0 0 8px rgba(255, 255, 255, 0.1)' }}
-          ></button>
-          <div className="w-[1px] h-20 bg-gradient-to-b from-transparent via-white/30 to-transparent"></div>
+            className="w-4 h-4 rotate-45 transition-all"
+            style={{
+              background: 'transparent',
+              border: '2px solid rgba(255, 255, 255, 0.5)',
+              backdropFilter: 'blur(4px)',
+              boxShadow: '0 0 8px rgba(255, 255, 255, 0.1)'
+            }}
+          />
+          <div 
+            className="w-px h-24"
+            style={{
+              background: 'linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.3) 30%, rgba(255, 255, 255, 0.3) 70%, transparent)'
+            }}
+          />
         </div>
       </div>
     </section>
