@@ -1,101 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyberGenius - Cybersecurity Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberGenius - Cybersecurity Solutions</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { height: 100%; font-family: sans-serif; overflow: hidden; background: black; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.inset-0 { top: 0; left: 0; right: 0; bottom: 0; }
+.h-screen { height: 100vh; }
+.overflow-hidden { overflow: hidden; }
+.bg-cover { background-size: cover; background-position: center; }
+/* Overlay & Divider */
+.overlay-left { position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.6), transparent); backdrop-filter: blur(5px); }
+.divider { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.3), transparent); transform: translateX(-50%); z-index: 10; }
+/* Header */
+header { position: relative; z-index: 20; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: flex-start; }
+header h1 { font-size: 2rem; font-weight: bold; line-height: 1; margin-bottom: 0.25rem; }
+header h1 span.text-red { color: #ff3333; }
+.tagline { display: flex; align-items: center; gap: 0.25rem; font-size: 9px; letter-spacing: 0.25em; color: #ccc; text-transform: uppercase; }
+nav a { text-decoration: none; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; color: rgba(255,255,255,0.6); margin-left: 2rem; transition: color 0.3s; }
+nav a:hover, nav a.active { color: white; }
+/* Hero Sections */
+.hero-container { position: relative; width: 100%; height: 100%; overflow: hidden; }
+.hero { position: absolute; top: 0; left: 100%; width: 100%; height: 100%; padding: 5rem 3rem 0 3rem; max-width: 600px; color: white; transition: left 0.6s ease; }
+.hero.active { left: 0; }
+.hero .label { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.4em; color: rgba(255,255,255,0.8); margin-bottom: 2rem; }
+.hero h2 { font-size: 10rem; line-height: 0.85; font-weight: 900; letter-spacing: -0.05em; position: relative; margin-bottom: 2rem; background-clip: text; -webkit-background-clip: text; color: transparent; }
+.hero .text-circuit { background-size: cover; background-position: center; filter: contrast(1.2) brightness(0.9); }
+.hero p { font-style: italic; font-family: serif; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; }
+.hero a.learn-more { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.3em; border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 0.25rem; color: white; text-decoration: none; transition: border-color 0.3s; }
+.hero a.learn-more:hover { border-color: white; }
+/* Floating Icons */
+.icon { position: absolute; font-size: 3rem; color: #ff3333; opacity: 0.8; filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4)); }
+/* Vertical Diamonds */
+.vertical-diamonds { position: absolute; right: 5rem; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; z-index: 20; }
+.vertical-diamonds .line { width: 1px; height: 5rem; background: rgba(255,255,255,0.3); }
+.vertical-diamonds .diamond { width: 0.75rem; height: 0.75rem; background: white; transform: rotate(45deg); opacity: 0.4; cursor: pointer; }
+.vertical-diamonds .diamond.active { opacity: 1; }
+/* Navigation arrows */
+.nav-arrows { position: absolute; bottom: 2.5rem; right: 2.5rem; display: flex; gap: 0.5rem; z-index: 20; }
+.nav-arrows button { width: 3.5rem; height: 3.5rem; border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); backdrop-filter: blur(5px); transition: all 0.3s; cursor: pointer; }
+.nav-arrows button:hover { background: rgba(255,255,255,0.2); }
+.nav-arrows i { color: white; font-size: 1.25rem; }
+</style>
 </head>
 <body>
-    <!-- BACKGROUND SPLIT -->
-    <div class="background">
-        <div class="background-left"></div>
-        <div class="background-right"></div>
-        <div class="glass-edge"></div>
-    </div>
-
-    <!-- NAVIGATION -->
-    <nav class="navigation">
-        <div class="logo-section">
-            <div class="leaf-icons">
-                <span class="leaf">🍃</span>
-                <span class="leaf">🍃</span>
-            </div>
-            <h1 class="logo">
-                <span class="logo-white">CYBER</span><span class="logo-red">GENIUS</span>
-            </h1>
-            <div class="leaf-icons-small">
-                <span class="leaf-small">🍃</span>
-                <span class="leaf-small">🍃</span>
-            </div>
-            <p class="tagline">
-                YOU <span class="highlight-red">CAN</span> SECURE YOUR FUTURE
-            </p>
-        </div>
-        
-        <div class="nav-menu">
-            <a href="#home" class="nav-link active">HOME</a>
-            <a href="#about" class="nav-link">ABOUT</a>
-            <a href="#services" class="nav-link">SERVICES</a>
-            <a href="#testimonials" class="nav-link">TESTIMONIALS</a>
-            <a href="#contact" class="nav-link">CONTACT</a>
-        </div>
-    </nav>
-
-    <!-- MAIN CONTENT -->
-    <main class="hero">
-        <div class="content">
-            <p class="section-label">AMAZING SOLUTIONS</p>
-            
-            <div class="headline">
-                <div class="headline-row">
-                    <h2 class="headline-textured">CYBER</h2>
-                    <h2 class="headline-white">SECURITY</h2>
-                </div>
-                <h2 class="headline-textured-large">SOLUTIONS</h2>
-            </div>
-
-            <p class="subtext">
-                There is a moment in the life of any aspiring organization that it is time to secure their digital future.
-            </p>
-
-            <a href="#services" class="cta">LEARN MORE</a>
-        </div>
-
-        <!-- BOTTOM CONTROLS -->
-        <div class="bottom-controls">
-            <div class="slider-indicator">
-                <div class="slider-line"></div>
-                <button class="diamond"></button>
-                <button class="diamond active"></button>
-                <button class="diamond"></button>
-            </div>
-            
-            <div class="arrow-buttons">
-                <button class="arrow-btn arrow-left">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                        <path d="M15 18l-6-6 6-6"/>
-                    </svg>
-                </button>
-                <button class="arrow-btn arrow-right">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                        <path d="M9 18l6-6-6-6"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </main>
-
-    <!-- RIGHT SIDE INDICATOR -->
-    <div class="right-indicator">
-        <div class="indicator-line"></div>
-        <button class="diamond-right"></button>
-        <button class="diamond-right active"></button>
-        <button class="diamond-right"></button>
-        <div class="indicator-line"></div>
-    </div>
-
-    <script src="script.js"></script>
+<div class="relative h-screen overflow-hidden">
+<!-- Background -->
+<div class="absolute inset-0 bg-cover" style="background-image: url('https://images.unsplash.com/photo-1657622185369-a5a0190f151e?w=1920&q=80');"></div>
+<div class="overlay-left"></div>
+<div class="divider"></div>
+<!-- Floating Icons -->
+<i class="fas fa-shield-alt icon" style="top: 3rem; left: 5rem; transform: rotate(15deg);"></i>
+<i class="fas fa-lock icon" style="top: 2rem; left: 8rem; font-size:2rem; opacity:0.6; transform: rotate(-12deg);"></i>
+<!-- Header -->
+<header>
+<div>
+<h1>
+<span>CYBER</span><span class="text-red">GENIUS</span>
+</h1>
+<div class="tagline">
+<i class="fas fa-shield-alt"></i>
+YOU <span class="text-red">CAN</span> SECURE <span class="text-red">YOUR</span> FUTURE
+<i class="fas fa-shield-alt"></i>
+</div>
+</div>
+<nav>
+<a href="#" class="active">HOME</a>
+<a href="#about">ABOUT</a>
+<a href="#services">SERVICES</a>
+<a href="#testimonials">TESTIMONIALS</a>
+<a href="#contact">CONTACT</a>
+</nav>
+</header>
+<!-- Hero Sections -->
+<div class="hero-container">
+<div class="hero active">
+<div class="label">AMAZING SOLUTIONS</div>
+<h2><span class="text-circuit" style="background-image:url('https://images.unsplash.com/photo-1657622185369-a5a0190f151e?w=1920&q=80')">CYBER</span> <span style="color:white;text-shadow:0 0 40px rgba(255,255,255,0.5)">SECURITY</span></h2>
+<p>There is a moment in the life of any aspiring organization that it is time to secure their digital future.</p>
+<a href="#learn" class="learn-more">LEARN MORE</a>
+</div>
+<div class="hero">
+<div class="label">PREMIUM PROTECTION</div>
+<h2><span class="text-circuit" style="background-image:url('https://images.unsplash.com/photo-1657622185369-a5a0190f151e?w=1920&q=80')">CYBER</span> <span style="color:white;text-shadow:0 0 40px rgba(255,255,255,0.5)">DEFENSE</span></h2>
+<p>Advanced threat protection and security monitoring for your digital infrastructure.</p>
+<a href="#learn" class="learn-more">LEARN MORE</a>
+</div>
+<div class="hero">
+<div class="label">DIGITAL TRANSFORMATION</div>
+<h2><span class="text-circuit" style="background-image:url('https://images.unsplash.com/photo-1657622185369-a5a0190f151e?w=1920&q=80')">CYBER</span> <span style="color:white;text-shadow:0 0 40px rgba(255,255,255,0.5)">INNOVATION</span></h2>
+<p>Transform your business securely with our comprehensive digital solutions.</p>
+<a href="#learn" class="learn-more">LEARN MORE</a>
+</div>
+</div>
+<!-- Vertical Diamonds -->
+<div class="vertical-diamonds">
+<div class="line"></div>
+<div class="diamond active" data-index="0"></div>
+<div class="diamond" data-index="1"></div>
+<div class="diamond" data-index="2"></div>
+<div class="line"></div>
+</div>
+<!-- Navigation Arrows -->
+<div class="nav-arrows">
+<button id="prev"><i class="fas fa-chevron-left"></i></button>
+<button id="next"><i class="fas fa-chevron-right"></i></button>
+</div>
+</div>
+<script>
+const heroes = document.querySelectorAll('.hero');
+const diamonds = document.querySelectorAll('.diamond');
+let currentIndex = 0;
+let autoSlide;
+function showHero(index) {
+heroes.forEach((hero, i) => hero.classList.toggle('active', i === index));
+diamonds.forEach((diamond, i) => diamond.classList.toggle('active', i === index));
+}
+function nextHero() {
+currentIndex = (currentIndex + 1) % heroes.length;
+showHero(currentIndex);
+}
+function prevHero() {
+currentIndex = (currentIndex - 1 + heroes.length) % heroes.length;
+showHero(currentIndex);
+}
+// Manual controls
+document.getElementById('next').addEventListener('click', () => {
+nextHero();
+resetAutoSlide();
+});
+document.getElementById('prev').addEventListener('click', () => {
+prevHero();
+resetAutoSlide();
+});
+diamonds.forEach(diamond => {
+diamond.addEventListener('click', () => {
+currentIndex = parseInt(diamond.dataset.index);
+showHero(currentIndex);
+resetAutoSlide();
+});
+});
+// Auto-slide every 5 seconds
+function startAutoSlide() {
+autoSlide = setInterval(nextHero, 5000);
+}
+function resetAutoSlide() {
+clearInterval(autoSlide);
+startAutoSlide();
+}
+// Initialize
+showHero(currentIndex);
+startAutoSlide();
+</script>
 </body>
 </html>
