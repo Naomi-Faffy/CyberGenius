@@ -1,76 +1,5 @@
 @import "tailwindcss";
 
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
-
-/* Color Variables */
-@theme inline {
-  /* Cyber Theme Colors */
-  --color-cyber-red: #dc2626;
-  --color-cyber-red-bright: #ef4444;
-  --color-cyber-red-dark: #991b1b;
-  --color-cyber-black: #0a0a0a;
-  --color-cyber-black-light: #1a1a1a;
-  --color-cyber-white: #ffffff;
-  --color-cyber-gray: #404040;
-  
-  /* Glassmorphism Colors */
-  --color-glass-red: rgba(220, 38, 38, 0.15);
-  --color-glass-red-border: rgba(255, 255, 255, 0.2);
-  --color-glass-white: rgba(255, 255, 255, 0.08);
-  --color-glass-white-border: rgba(255, 255, 255, 0.15);
-  
-  /* Semantic Colors */
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #e5e5e5;
-  --color-text-muted: #a3a3a3;
-  --color-text-red: #dc2626;
-}
-
-/* Custom Utilities */
-@utility glass-panel {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
-  border: 2px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
-
-@utility glass-panel-strong {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(60px) saturate(200%);
-  -webkit-backdrop-filter: blur(60px) saturate(200%);
-  border: 3px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-@utility glass-card {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(30px) saturate(150%);
-  -webkit-backdrop-filter: blur(30px) saturate(150%);
-  border: 1.5px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.3);
-}
-
-@utility text-glow-red {
-  text-shadow: 0 0 20px rgba(220, 38, 38, 0.5), 0 0 40px rgba(220, 38, 38, 0.3);
-}
-
-@utility text-glow-white {
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.2);
-}
-
-@utility scrollbar-hidden {
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  & {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-}
-
-/* Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -78,23 +7,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: #0a0a0a;
-  color: #ffffff;
-  overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', sans-serif;
-}
-
-/* Smooth Scroll */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Selection */
-::selection {
-  background: rgba(220, 38, 38, 0.3);
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #000000;
   color: #ffffff;
 }
