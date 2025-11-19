@@ -25,5 +25,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    console.log('CyberGenius page loaded successfully');
+    console.log('African Journey page loaded successfully');
 });
