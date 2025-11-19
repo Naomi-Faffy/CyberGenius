@@ -1,13 +1,45 @@
 @import "tailwindcss";
 
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Color Variables */
+@theme inline {
+  /* CyberGenius Brand Colors */
+  --color-cyber-red: #dc2626;
+  --color-cyber-red-bright: #ef4444;
+  --color-cyber-red-dark: #991b1b;
+  --color-cyber-black: #0a0a0a;
+  --color-cyber-black-light: #1a1a1a;
+  --color-cyber-gray: #404040;
+  --color-cyber-gray-light: #737373;
+  --color-cyber-white: #ffffff;
+}
+
+/* Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background: #000000;
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Selection */
+::selection {
+  background: rgba(220, 38, 38, 0.3);
   color: #ffffff;
 }
