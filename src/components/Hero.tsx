@@ -1,170 +1,171 @@
-import { ChevronRight, Shield, Lock, Server } from 'lucide-react'
+import { ChevronRight, Shield, Lock, Globe } from 'lucide-react'
 
 const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center p-6 sm:p-8 lg:p-12 overflow-hidden"
     >
-      {/* Background Image with Overlay */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1610208206904-155f1086a604?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwc3BoZXJlJTIwY2lyY3VpdCUyMGJvYXJkJTIwdGVjaG5vbG9neSUyMGN5YmVyc2VjdXJpdHklMjByZWQlMjBnbG93fGVufDB8MHx8cmVkfDE3NjM1NDQ3OTZ8MA&ixlib=rb-4.1.0&q=85"
-          alt="Red glowing digital sphere with circuit board patterns radiating outward, cybersecurity technology theme, dark background with bright red illumination by Michael Dziedzic on Unsplash"
+          src="https://images.unsplash.com/photo-1660836814985-8523a0d713b5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwyfHxuZXR3b3JrJTIwdGVjaG5vbG9neSUyMGRpZ2l0YWwlMjBjeWJlcnNlY3VyaXR5JTIwZGFyayUyMGJhY2tncm91bmR8ZW58MHwwfHxibGFja3wxNzYzNTQ1MDUwfDA&ixlib=rb-4.1.0&q=85"
+          alt="Dark technology background with network connections, digital security, circuit patterns, futuristic cyber theme by GuerrillaBuzz on Unsplash"
           className="w-full h-full object-cover"
           style={{ 
-            backgroundColor: '#f30c40',
+            backgroundColor: '#f3d9d9',
             width: '100%',
             height: '100%'
           }}
         />
-        {/* Dark overlay for better glass contrast */}
-        <div className="absolute inset-0 bg-black/40"></div>
-        
-        {/* Red glow overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cyber-red/20 via-transparent to-cyber-red-dark/30"></div>
+        {/* Gradient overlays for depth */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-cyber-red-dark/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
       </div>
 
-      {/* Main Glass Container */}
-      <div className="relative z-10 w-full max-w-[1400px] h-[90vh] min-h-[700px]">
-        {/* Outer Glass Frame with impressive border */}
-        <div className="relative w-full h-full rounded-[40px] glass-panel-strong p-1">
-          {/* Inner Content Area */}
-          <div className="relative w-full h-full rounded-[36px] overflow-hidden">
-            {/* Top Navigation Bar */}
-            <div className="absolute top-0 left-0 right-0 p-6 sm:p-8 z-20">
-              <div className="flex items-center justify-between">
-                {/* Left: Brand */}
-                <div className="flex items-center gap-3">
-                  <div className="text-white font-bold text-xl tracking-tight">
-                    CYBER<span className="text-cyber-red">GENIUS</span>
-                  </div>
-                </div>
+      {/* Main Glass Container - Matching reference design */}
+      <div className="relative z-10 w-full max-w-[1400px] h-[85vh] min-h-[700px]">
+        {/* Outer Glass Frame with white border like reference */}
+        <div className="relative w-full h-full rounded-[48px] border-[3px] border-white/30 overflow-hidden glass-panel-strong shadow-2xl">
+          
+          {/* Top Navigation inside glass */}
+          <div className="absolute top-0 left-0 right-0 p-8 z-20">
+            <div className="flex items-center justify-between">
+              {/* Left: Brand Name */}
+              <div className="text-white text-sm font-medium tracking-widest uppercase">
+                CYBERGENIUS
+              </div>
 
-                {/* Right: Nav Links */}
-                <div className="hidden sm:flex items-center gap-1">
-                  <a href="#home" className="px-4 py-2 text-white text-sm font-medium hover:text-cyber-red transition-colors">
-                    HOME
-                  </a>
-                  <a href="#about" className="px-4 py-2 text-white/80 text-sm font-medium hover:text-white transition-colors">
-                    ABOUT US
-                  </a>
-                  <a href="#contact" className="px-4 py-2 text-white/80 text-sm font-medium hover:text-white transition-colors">
-                    CONTACTS
-                  </a>
-                  <a href="#faq" className="px-4 py-2 text-white/80 text-sm font-medium hover:text-white transition-colors">
-                    FAQ
-                  </a>
-                </div>
+              {/* Social Icons (like reference) */}
+              <div className="flex items-center gap-3">
+                <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white/80 hover:bg-white/10 transition-all">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white/80 hover:bg-white/10 transition-all">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z"/></svg>
+                </a>
+                <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white/80 hover:bg-white/10 transition-all">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="#" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center text-white/80 hover:bg-white/10 transition-all">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+              </div>
+
+              {/* Right: Navigation Links */}
+              <div className="hidden lg:flex items-center gap-8">
+                <a href="#home" className="text-white text-sm font-medium hover:text-cyber-red transition-colors">HOME</a>
+                <a href="#about" className="text-white/70 text-sm font-medium hover:text-white transition-colors">ABOUT US</a>
+                <a href="#contact" className="text-white/70 text-sm font-medium hover:text-white transition-colors">CONTACTS</a>
+                <a href="#faq" className="text-white/70 text-sm font-medium hover:text-white transition-colors">FAQ</a>
               </div>
             </div>
+          </div>
 
-            {/* Main Content Grid */}
-            <div className="relative h-full grid grid-cols-1 lg:grid-cols-2 gap-6 p-6 sm:p-8 pt-24 sm:pt-28">
-              {/* Left Side: Info Card */}
-              <div className="flex flex-col justify-center">
-                <div className="glass-card rounded-[32px] p-8 sm:p-10 space-y-6">
-                  <div className="space-y-2">
-                    <div className="inline-block px-4 py-1.5 rounded-full glass-panel text-cyber-red text-xs font-semibold tracking-wider">
-                      CYBERSECURITY SOLUTIONS
-                    </div>
-                    <h2 className="text-white font-bold text-2xl sm:text-3xl leading-tight">
-                      Advanced Protection for Your Digital Assets
-                    </h2>
-                  </div>
+          {/* Main Content Area */}
+          <div className="relative h-full flex flex-col lg:flex-row p-8 lg:p-12 pt-28">
+            
+            {/* Left Side: Large Typography (like "african forest") */}
+            <div className="flex-1 flex flex-col justify-center">
+              <h1 
+                className="text-white font-black leading-[0.85] mb-4 text-glow-white"
+                style={{ fontSize: 'clamp(60px, 12vw, 160px)' }}
+              >
+                cyber
+              </h1>
+              <h1 
+                className="text-white font-black leading-[0.85] text-glow-white"
+                style={{ fontSize: 'clamp(60px, 12vw, 160px)' }}
+              >
+                security
+              </h1>
+            </div>
 
-                  <p className="text-white/70 text-sm sm:text-base leading-relaxed">
-                    Comprehensive cybersecurity services designed to protect your business from evolving threats. 
-                    Our cutting-edge solutions ensure your data remains secure in an increasingly connected world.
-                  </p>
+            {/* Right Side: Content */}
+            <div className="flex-1 flex flex-col justify-between pt-8 lg:pt-0">
+              {/* Empty space for balance */}
+              <div></div>
 
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full glass-panel flex items-center justify-center flex-shrink-0">
-                        <Shield className="text-cyber-red" size={20} />
-                      </div>
-                      <span className="text-white/80 text-sm">24/7 Threat Monitoring</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full glass-panel flex items-center justify-center flex-shrink-0">
-                        <Lock className="text-cyber-red" size={20} />
-                      </div>
-                      <span className="text-white/80 text-sm">End-to-End Encryption</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full glass-panel flex items-center justify-center flex-shrink-0">
-                        <Server className="text-cyber-red" size={20} />
-                      </div>
-                      <span className="text-white/80 text-sm">Cloud Security Infrastructure</span>
-                    </div>
-                  </div>
-
-                  <button className="w-full sm:w-auto px-8 py-3.5 bg-cyber-red hover:bg-cyber-red-bright text-white rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-cyber-red/50">
-                    Learn More
-                  </button>
-                </div>
-              </div>
-
-              {/* Right Side: Large Typography */}
-              <div className="flex flex-col justify-center items-start lg:items-end">
+              {/* Info Card (like the tour card in reference) */}
+              <div className="glass-card rounded-[32px] p-8 max-w-md ml-auto">
                 <div className="space-y-4">
-                  <h1 
-                    className="text-white font-black leading-[0.85] text-glow-white"
-                    style={{ fontSize: 'clamp(80px, 12vw, 180px)' }}
-                  >
-                    cyber
-                  </h1>
-                  <h1 
-                    className="text-white font-black leading-[0.85] text-glow-white lg:text-right"
-                    style={{ fontSize: 'clamp(80px, 12vw, 180px)' }}
-                  >
-                    security
-                  </h1>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom Section */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 z-20">
-              <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
-                {/* Stats Cards */}
-                <div className="flex flex-wrap gap-4">
-                  <div className="glass-card rounded-2xl px-6 py-4 min-w-[140px]">
-                    <div className="text-cyber-red font-bold text-3xl mb-1">99.9%</div>
-                    <div className="text-white/60 text-xs">Uptime Guarantee</div>
-                  </div>
-                  <div className="glass-card rounded-2xl px-6 py-4 min-w-[140px]">
-                    <div className="text-cyber-red font-bold text-3xl mb-1">500+</div>
-                    <div className="text-white/60 text-xs">Protected Clients</div>
-                  </div>
-                  <div className="glass-card rounded-2xl px-6 py-4 min-w-[140px]">
-                    <div className="text-cyber-red font-bold text-3xl mb-1">24/7</div>
-                    <div className="text-white/60 text-xs">Support Available</div>
-                  </div>
-                </div>
-
-                {/* Navigation Dots */}
-                <div className="flex items-center gap-3">
-                  <div className="flex flex-col gap-2">
-                    <button className="w-2 h-2 rounded-full bg-white"></button>
-                    <button className="w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors"></button>
-                    <button className="w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors"></button>
-                    <button className="w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors"></button>
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-2 h-2 bg-cyber-red rounded-full"></div>
+                    <span className="text-cyber-red text-xs font-bold tracking-wider uppercase">Premium Protection</span>
                   </div>
                   
-                  {/* Arrow Buttons */}
-                  <div className="flex gap-2">
-                    <button className="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white/10 transition-all">
-                      <ChevronRight className="text-white rotate-180" size={20} />
-                    </button>
-                    <button className="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white/10 transition-all">
-                      <ChevronRight className="text-white" size={20} />
-                    </button>
-                  </div>
+                  <h3 className="text-white font-bold text-2xl leading-tight">
+                    Advanced Cybersecurity Solutions
+                  </h3>
+                  
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    Protect your digital assets with cutting-edge security measures. Our comprehensive 
+                    solutions ensure your business stays safe from evolving cyber threats in today's 
+                    connected world.
+                  </p>
+
+                  <button className="mt-4 px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm font-medium transition-all duration-300 border border-white/20">
+                    View Details
+                  </button>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Bottom Section */}
+          <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12 z-20">
+            <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
+              
+              {/* Left: Feature Cards */}
+              <div className="flex flex-wrap gap-4">
+                <div className="glass-card rounded-2xl px-5 py-4 flex items-center gap-3">
+                  <Shield className="text-cyber-red" size={24} />
+                  <div>
+                    <div className="text-white font-bold text-sm">24/7 Protection</div>
+                    <div className="text-white/50 text-xs">Always Secure</div>
+                  </div>
+                </div>
+                
+                <div className="glass-card rounded-2xl px-5 py-4 flex items-center gap-3">
+                  <Lock className="text-cyber-red" size={24} />
+                  <div>
+                    <div className="text-white font-bold text-sm">Encrypted</div>
+                    <div className="text-white/50 text-xs">End-to-End</div>
+                  </div>
+                </div>
+
+                <div className="glass-card rounded-2xl px-5 py-4 flex items-center gap-3">
+                  <Globe className="text-cyber-red" size={24} />
+                  <div>
+                    <div className="text-white font-bold text-sm">Global Network</div>
+                    <div className="text-white/50 text-xs">Worldwide Coverage</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Navigation Controls (like reference) */}
+              <div className="flex items-center gap-4">
+                {/* Vertical dots */}
+                <div className="flex flex-col gap-2">
+                  <button className="w-2.5 h-2.5 rounded-full bg-white shadow-lg"></button>
+                  <button className="w-2.5 h-2.5 rounded-full bg-white/30 hover:bg-white/60 transition-all"></button>
+                  <button className="w-2.5 h-2.5 rounded-full bg-white/30 hover:bg-white/60 transition-all"></button>
+                  <button className="w-2.5 h-2.5 rounded-full bg-white/30 hover:bg-white/60 transition-all"></button>
+                </div>
+
+                {/* Arrow buttons */}
+                <div className="flex gap-2">
+                  <button className="w-14 h-14 rounded-full glass-panel flex items-center justify-center hover:bg-white/10 transition-all group">
+                    <ChevronRight className="text-white rotate-180 group-hover:scale-110 transition-transform" size={20} />
+                  </button>
+                  <button className="w-14 h-14 rounded-full glass-panel flex items-center justify-center hover:bg-white/10 transition-all group">
+                    <ChevronRight className="text-white group-hover:scale-110 transition-transform" size={20} />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
