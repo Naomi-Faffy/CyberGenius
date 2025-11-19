@@ -1,99 +1,168 @@
-import { ChevronDown } from 'lucide-react'
+import { ChevronRight, Shield, Lock, Server } from 'lucide-react'
 
 const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center p-6 sm:p-8 lg:p-12"
-      style={{ background: 'linear-gradient(135deg, #5a9b8a 0%, #4a8b7f 100%)' }}
+      className="relative min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8 overflow-hidden"
     >
-      {/* Main Content Card */}
-      <div className="relative w-full max-w-[1400px] h-[85vh] rounded-[48px] border-4 border-white overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1613392913142-d90cd00f1831?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw0fHx0cm9waWNhbCUyMGxlYXZlcyUyMG1vbnN0ZXJhJTIwYmFuYW5hJTIwbGVhdmVzJTIwZ3JlZW4lMjBmb2xpYWdlfGVufDB8MHx8Z3JlZW58MTc2MzQ4NTk3Mnww&ixlib=rb-4.1.0&q=85"
-            alt="lush tropical green leaves by Christhian Gruhn on Unsplash"
-            className="w-full h-full object-cover"
-            style={{ 
-              backgroundColor: '#264026',
-              filter: 'brightness(0.7) saturate(1.2)'
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40"></div>
-        </div>
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1610208206904-155f1086a604?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwc3BoZXJlJTIwY2lyY3VpdCUyMGJvYXJkJTIwdGVjaG5vbG9neSUyMGN5YmVyc2VjdXJpdHklMjByZWQlMjBnbG93fGVufDB8MHx8cmVkfDE3NjM1NDQ3OTZ8MA&ixlib=rb-4.1.0&q=85"
+          alt="Red glowing digital sphere with circuit board patterns radiating outward, cybersecurity technology theme, dark background with bright red illumination by Michael Dziedzic on Unsplash"
+          className="w-full h-full object-cover"
+          style={{ 
+            backgroundColor: '#f30c40',
+            width: '100%',
+            height: '100%'
+          }}
+        />
+        {/* Dark overlay for better glass contrast */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        
+        {/* Red glow overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-cyber-red/20 via-transparent to-cyber-red-dark/30"></div>
+      </div>
 
-        {/* Content Container */}
-        <div className="relative h-full flex flex-col p-8 lg:p-12">
-          {/* Hero Text */}
-          <div className="flex-1 flex flex-col justify-center max-w-4xl">
-            <p className="text-white/90 text-xl mb-6 font-light tracking-wide">
-              Petal power
-            </p>
-            
-            <h1 
-              className="text-white font-black leading-[0.85] mb-8"
-              style={{ fontSize: 'clamp(80px, 15vw, 220px)' }}
-            >
-              growth
-            </h1>
-
-            <p className="text-white/90 text-lg max-w-2xl leading-relaxed">
-              We're your online houseplant destination. We offer a wide range of houseplants and 
-              accessories shipped directly from our (green)house to yours!
-            </p>
-          </div>
-
-          {/* Bottom Section */}
-          <div className="flex items-end justify-between gap-8">
-            {/* Stats Card with Plants */}
-            <div className="flex items-center gap-6 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-6 max-w-sm">
-              <div className="flex-1">
-                <h3 className="text-white font-bold text-4xl mb-2 whitespace-nowrap">
-                  100+Plants
-                </h3>
-                <p className="text-white/80 text-sm leading-snug">
-                  We want our visitors to be inspired to get their hands dirty
-                </p>
-              </div>
-              
-              {/* Plant Thumbnails */}
-              <div className="flex flex-col gap-3">
-                <div className="w-20 h-20 rounded-2xl overflow-hidden border-2 border-white/40">
-                  <img
-                    src="https://images.unsplash.com/photo-1637424592613-0a99407a4925?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwyfHxwb3R0ZWQlMjBwbGFudCUyMGhvdXNlcGxhbnQlMjBpbmRvb3IlMjBwbGFudHxlbnwwfDJ8fGdyZWVufDE3NjM0ODU5NzJ8MA&ixlib=rb-4.1.0&q=85"
-                    alt="potted plant by Daniel Salcius on Unsplash"
-                    className="w-full h-full object-cover"
-                    style={{ backgroundColor: '#405926' }}
-                  />
+      {/* Main Glass Container */}
+      <div className="relative z-10 w-full max-w-[1400px] h-[90vh] min-h-[700px]">
+        {/* Outer Glass Frame with impressive border */}
+        <div className="relative w-full h-full rounded-[40px] glass-panel-strong p-1">
+          {/* Inner Content Area */}
+          <div className="relative w-full h-full rounded-[36px] overflow-hidden">
+            {/* Top Navigation Bar */}
+            <div className="absolute top-0 left-0 right-0 p-6 sm:p-8 z-20">
+              <div className="flex items-center justify-between">
+                {/* Left: Brand */}
+                <div className="flex items-center gap-3">
+                  <div className="text-white font-bold text-xl tracking-tight">
+                    CYBER<span className="text-cyber-red">GENIUS</span>
+                  </div>
                 </div>
-                <div className="w-20 h-20 rounded-2xl overflow-hidden border-2 border-white/40">
-                  <img
-                    src="https://images.unsplash.com/photo-1661001782555-aa6526c3744b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwxfHxzdWNjdWxlbnQlMjBwb3R0ZWQlMjBwbGFudCUyMHNtYWxsJTIwcGxhbnR8ZW58MHwyfHxncmVlbnwxNzYzNDg1OTcyfDA&ixlib=rb-4.1.0&q=85"
-                    alt="succulent plant by Kai Vu on Unsplash"
-                    className="w-full h-full object-cover"
-                    style={{ backgroundColor: '#407326' }}
-                  />
+
+                {/* Right: Nav Links */}
+                <div className="hidden sm:flex items-center gap-1">
+                  <a href="#home" className="px-4 py-2 text-white text-sm font-medium hover:text-cyber-red transition-colors">
+                    HOME
+                  </a>
+                  <a href="#about" className="px-4 py-2 text-white/80 text-sm font-medium hover:text-white transition-colors">
+                    ABOUT US
+                  </a>
+                  <a href="#contact" className="px-4 py-2 text-white/80 text-sm font-medium hover:text-white transition-colors">
+                    CONTACTS
+                  </a>
+                  <a href="#faq" className="px-4 py-2 text-white/80 text-sm font-medium hover:text-white transition-colors">
+                    FAQ
+                  </a>
                 </div>
               </div>
             </div>
 
-            {/* Right Side: CTA + Scroll */}
-            <div className="flex flex-col items-end gap-6">
-              {/* CTA Button */}
-              <a
-                href="#shop"
-                className="inline-block px-10 py-4 bg-white text-plant-green-dark rounded-full font-semibold text-lg shadow-2xl hover:bg-plant-cream transition-all duration-300 hover:scale-105"
-              >
-                Shop tropical plants
-              </a>
+            {/* Main Content Grid */}
+            <div className="relative h-full grid grid-cols-1 lg:grid-cols-2 gap-6 p-6 sm:p-8 pt-24 sm:pt-28">
+              {/* Left Side: Info Card */}
+              <div className="flex flex-col justify-center">
+                <div className="glass-card rounded-[32px] p-8 sm:p-10 space-y-6">
+                  <div className="space-y-2">
+                    <div className="inline-block px-4 py-1.5 rounded-full glass-panel text-cyber-red text-xs font-semibold tracking-wider">
+                      CYBERSECURITY SOLUTIONS
+                    </div>
+                    <h2 className="text-white font-bold text-2xl sm:text-3xl leading-tight">
+                      Advanced Protection for Your Digital Assets
+                    </h2>
+                  </div>
 
-              {/* Scroll Indicator */}
-              <a href="#services" className="block">
-                <div className="w-14 h-14 rounded-full border-2 border-white/50 flex items-center justify-center hover:border-white hover:bg-white/10 transition-all duration-300">
-                  <ChevronDown className="text-white" size={28} />
+                  <p className="text-white/70 text-sm sm:text-base leading-relaxed">
+                    Comprehensive cybersecurity services designed to protect your business from evolving threats. 
+                    Our cutting-edge solutions ensure your data remains secure in an increasingly connected world.
+                  </p>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full glass-panel flex items-center justify-center flex-shrink-0">
+                        <Shield className="text-cyber-red" size={20} />
+                      </div>
+                      <span className="text-white/80 text-sm">24/7 Threat Monitoring</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full glass-panel flex items-center justify-center flex-shrink-0">
+                        <Lock className="text-cyber-red" size={20} />
+                      </div>
+                      <span className="text-white/80 text-sm">End-to-End Encryption</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full glass-panel flex items-center justify-center flex-shrink-0">
+                        <Server className="text-cyber-red" size={20} />
+                      </div>
+                      <span className="text-white/80 text-sm">Cloud Security Infrastructure</span>
+                    </div>
+                  </div>
+
+                  <button className="w-full sm:w-auto px-8 py-3.5 bg-cyber-red hover:bg-cyber-red-bright text-white rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-cyber-red/50">
+                    Learn More
+                  </button>
                 </div>
-              </a>
+              </div>
+
+              {/* Right Side: Large Typography */}
+              <div className="flex flex-col justify-center items-start lg:items-end">
+                <div className="space-y-4">
+                  <h1 
+                    className="text-white font-black leading-[0.85] text-glow-white"
+                    style={{ fontSize: 'clamp(80px, 12vw, 180px)' }}
+                  >
+                    cyber
+                  </h1>
+                  <h1 
+                    className="text-white font-black leading-[0.85] text-glow-white lg:text-right"
+                    style={{ fontSize: 'clamp(80px, 12vw, 180px)' }}
+                  >
+                    security
+                  </h1>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Section */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 z-20">
+              <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
+                {/* Stats Cards */}
+                <div className="flex flex-wrap gap-4">
+                  <div className="glass-card rounded-2xl px-6 py-4 min-w-[140px]">
+                    <div className="text-cyber-red font-bold text-3xl mb-1">99.9%</div>
+                    <div className="text-white/60 text-xs">Uptime Guarantee</div>
+                  </div>
+                  <div className="glass-card rounded-2xl px-6 py-4 min-w-[140px]">
+                    <div className="text-cyber-red font-bold text-3xl mb-1">500+</div>
+                    <div className="text-white/60 text-xs">Protected Clients</div>
+                  </div>
+                  <div className="glass-card rounded-2xl px-6 py-4 min-w-[140px]">
+                    <div className="text-cyber-red font-bold text-3xl mb-1">24/7</div>
+                    <div className="text-white/60 text-xs">Support Available</div>
+                  </div>
+                </div>
+
+                {/* Navigation Dots */}
+                <div className="flex items-center gap-3">
+                  <div className="flex flex-col gap-2">
+                    <button className="w-2 h-2 rounded-full bg-white"></button>
+                    <button className="w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors"></button>
+                    <button className="w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors"></button>
+                    <button className="w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors"></button>
+                  </div>
+                  
+                  {/* Arrow Buttons */}
+                  <div className="flex gap-2">
+                    <button className="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white/10 transition-all">
+                      <ChevronRight className="text-white rotate-180" size={20} />
+                    </button>
+                    <button className="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-white/10 transition-all">
+                      <ChevronRight className="text-white" size={20} />
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
