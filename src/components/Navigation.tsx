@@ -7,53 +7,79 @@ const Navigation = () => {
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="absolute top-0 left-0 right-0 z-50 px-12 py-8">
+      <nav className="absolute top-0 left-0 right-0 z-50 px-12 py-10">
         <div className="flex items-start justify-between">
           {/* Logo & Branding - Top Left */}
-          <div className="space-y-1">
-            <div className="flex items-center gap-1 mb-1">
-              {/* Leaf icons */}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-cyber-red">
+          <div className="space-y-2">
+            {/* Leaf icons above logo */}
+            <div className="flex items-center gap-1.5 ml-1">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-cyber-red-neon">
                 <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.66-1.89C8 14 10 6 17 8z" fill="currentColor"/>
               </svg>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-cyber-red">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="text-cyber-red-neon">
                 <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.66-1.89C8 14 10 6 17 8z" fill="currentColor"/>
               </svg>
             </div>
-            <h1 className="text-xl font-bold uppercase tracking-wider leading-tight">
+            
+            {/* Logo Text */}
+            <h1 className="text-2xl font-semibold uppercase tracking-wide leading-tight" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}>
               <span className="text-white">CYBER</span>
-              <span className="text-cyber-red">GENIUS</span>
+              <span className="text-cyber-red-neon">GENIUS</span>
             </h1>
-            <div className="flex items-center gap-1">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="text-cyber-red">
+            
+            {/* Leaf icons above tagline */}
+            <div className="flex items-center gap-1.5 ml-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="text-cyber-red-neon">
                 <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.66-1.89C8 14 10 6 17 8z" fill="currentColor"/>
               </svg>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="text-cyber-red">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="text-cyber-red-neon">
                 <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.66-1.89C8 14 10 6 17 8z" fill="currentColor"/>
               </svg>
             </div>
-            <p className="text-xs uppercase tracking-widest">
-              <span className="text-white/60">YOU </span>
-              <span className="text-cyber-red">CAN</span>
-              <span className="text-white/60"> SECURE YOUR FUTURE</span>
+            
+            {/* Tagline */}
+            <p className="text-xs uppercase tracking-widest" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 300, letterSpacing: '0.15em' }}>
+              <span className="text-white/70">YOU </span>
+              <span className="text-cyber-red-neon">CAN</span>
+              <span className="text-white/70"> SECURE YOUR FUTURE</span>
             </p>
           </div>
 
           {/* Navigation Menu - Top Right */}
-          <div className="hidden lg:flex items-center gap-12">
-            <a href="#home" className="text-white text-sm font-semibold uppercase tracking-widest hover:text-cyber-red transition-colors">
+          <div className="hidden lg:flex items-center gap-10 pt-2">
+            <a 
+              href="#home" 
+              className="text-white text-sm uppercase tracking-wider transition-colors hover:text-cyber-red-neon"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600, letterSpacing: '0.1em' }}
+            >
               HOME
             </a>
-            <a href="#about" className="text-white/50 text-sm font-medium uppercase tracking-widest hover:text-white transition-colors">
+            <a 
+              href="#about" 
+              className="text-white/60 text-sm uppercase tracking-wider transition-colors hover:text-white"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400, letterSpacing: '0.1em' }}
+            >
               ABOUT
             </a>
-            <a href="#services" className="text-white/50 text-sm font-medium uppercase tracking-widest hover:text-white transition-colors">
+            <a 
+              href="#services" 
+              className="text-white/60 text-sm uppercase tracking-wider transition-colors hover:text-white"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400, letterSpacing: '0.1em' }}
+            >
               SERVICES
             </a>
-            <a href="#testimonials" className="text-white/50 text-sm font-medium uppercase tracking-widest hover:text-white transition-colors">
+            <a 
+              href="#testimonials" 
+              className="text-white/60 text-sm uppercase tracking-wider transition-colors hover:text-white"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400, letterSpacing: '0.1em' }}
+            >
               TESTIMONIALS
             </a>
-            <a href="#contact" className="text-white/50 text-sm font-medium uppercase tracking-widest hover:text-white transition-colors">
+            <a 
+              href="#contact" 
+              className="text-white/60 text-sm uppercase tracking-wider transition-colors hover:text-white"
+              style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 400, letterSpacing: '0.1em' }}
+            >
               CONTACT
             </a>
           </div>
@@ -74,16 +100,16 @@ const Navigation = () => {
               <a href="#home" onClick={() => setIsOpen(false)} className="block text-white text-sm font-semibold uppercase tracking-widest">
                 HOME
               </a>
-              <a href="#about" onClick={() => setIsOpen(false)} className="block text-white/50 text-sm font-medium uppercase tracking-widest">
+              <a href="#about" onClick={() => setIsOpen(false)} className="block text-white/60 text-sm font-medium uppercase tracking-widest">
                 ABOUT
               </a>
-              <a href="#services" onClick={() => setIsOpen(false)} className="block text-white/50 text-sm font-medium uppercase tracking-widest">
+              <a href="#services" onClick={() => setIsOpen(false)} className="block text-white/60 text-sm font-medium uppercase tracking-widest">
                 SERVICES
               </a>
-              <a href="#testimonials" onClick={() => setIsOpen(false)} className="block text-white/50 text-sm font-medium uppercase tracking-widest">
+              <a href="#testimonials" onClick={() => setIsOpen(false)} className="block text-white/60 text-sm font-medium uppercase tracking-widest">
                 TESTIMONIALS
               </a>
-              <a href="#contact" onClick={() => setIsOpen(false)} className="block text-white/50 text-sm font-medium uppercase tracking-widest">
+              <a href="#contact" onClick={() => setIsOpen(false)} className="block text-white/60 text-sm font-medium uppercase tracking-widest">
                 CONTACT
               </a>
             </div>
