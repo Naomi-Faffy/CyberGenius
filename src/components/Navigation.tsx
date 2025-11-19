@@ -5,89 +5,92 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 p-8 lg:p-12">
-      <div className="flex items-center justify-between">
-        {/* Logo - Top Left */}
-        <div>
-          <h1 className="text-white text-sm font-bold uppercase tracking-wider leading-tight">
-            CYBER<span className="text-cyber-red">GENIUS</span>
-          </h1>
-          <p className="text-white/60 text-xs uppercase tracking-wider mt-0.5">
-            You can secure your future
-          </p>
-        </div>
+    <>
+      {/* Desktop Navigation */}
+      <nav className="absolute top-0 left-0 right-0 z-50 px-12 py-8">
+        <div className="flex items-start justify-between">
+          {/* Logo & Branding - Top Left */}
+          <div className="space-y-1">
+            <div className="flex items-center gap-1 mb-1">
+              {/* Leaf icons */}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-cyber-red">
+                <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.66-1.89C8 14 10 6 17 8z" fill="currentColor"/>
+              </svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="text-cyber-red">
+                <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.66-1.89C8 14 10 6 17 8z" fill="currentColor"/>
+              </svg>
+            </div>
+            <h1 className="text-xl font-bold uppercase tracking-wider leading-tight">
+              <span className="text-white">CYBER</span>
+              <span className="text-cyber-red">GENIUS</span>
+            </h1>
+            <div className="flex items-center gap-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="text-cyber-red">
+                <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.66-1.89C8 14 10 6 17 8z" fill="currentColor"/>
+              </svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="text-cyber-red">
+                <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.66-1.89C8 14 10 6 17 8z" fill="currentColor"/>
+              </svg>
+            </div>
+            <p className="text-xs uppercase tracking-widest">
+              <span className="text-white/60">YOU </span>
+              <span className="text-cyber-red">CAN</span>
+              <span className="text-white/60"> SECURE YOUR FUTURE</span>
+            </p>
+          </div>
 
-        {/* Desktop Navigation - Top Right */}
-        <div className="hidden lg:flex items-center space-x-8">
-          <a href="#home" className="text-white text-sm font-medium uppercase tracking-wider hover:text-cyber-red transition-colors">
-            Home
-          </a>
-          <a href="#about" className="text-white/80 text-sm font-medium uppercase tracking-wider hover:text-white transition-colors">
-            About
-          </a>
-          <a href="#services" className="text-white/80 text-sm font-medium uppercase tracking-wider hover:text-white transition-colors">
-            Services
-          </a>
-          <a href="#testimonials" className="text-white/80 text-sm font-medium uppercase tracking-wider hover:text-white transition-colors">
-            Testimonials
-          </a>
-          <a href="#contact" className="text-white/80 text-sm font-medium uppercase tracking-wider hover:text-white transition-colors">
-            Contact
-          </a>
-        </div>
-
-        {/* Mobile menu button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-white p-2"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="lg:hidden mt-6 bg-black/80 backdrop-blur-md rounded-lg p-6">
-          <div className="space-y-4">
-            <a
-              href="#home"
-              onClick={() => setIsOpen(false)}
-              className="block text-white text-sm font-medium uppercase tracking-wider hover:text-cyber-red transition-colors"
-            >
-              Home
+          {/* Navigation Menu - Top Right */}
+          <div className="hidden lg:flex items-center gap-12">
+            <a href="#home" className="text-white text-sm font-semibold uppercase tracking-widest hover:text-cyber-red transition-colors">
+              HOME
             </a>
-            <a
-              href="#about"
-              onClick={() => setIsOpen(false)}
-              className="block text-white/80 text-sm font-medium uppercase tracking-wider hover:text-white transition-colors"
-            >
-              About
+            <a href="#about" className="text-white/50 text-sm font-medium uppercase tracking-widest hover:text-white transition-colors">
+              ABOUT
             </a>
-            <a
-              href="#services"
-              onClick={() => setIsOpen(false)}
-              className="block text-white/80 text-sm font-medium uppercase tracking-wider hover:text-white transition-colors"
-            >
-              Services
+            <a href="#services" className="text-white/50 text-sm font-medium uppercase tracking-widest hover:text-white transition-colors">
+              SERVICES
             </a>
-            <a
-              href="#testimonials"
-              onClick={() => setIsOpen(false)}
-              className="block text-white/80 text-sm font-medium uppercase tracking-wider hover:text-white transition-colors"
-            >
-              Testimonials
+            <a href="#testimonials" className="text-white/50 text-sm font-medium uppercase tracking-widest hover:text-white transition-colors">
+              TESTIMONIALS
             </a>
-            <a
-              href="#contact"
-              onClick={() => setIsOpen(false)}
-              className="block text-white/80 text-sm font-medium uppercase tracking-wider hover:text-white transition-colors"
-            >
-              Contact
+            <a href="#contact" className="text-white/50 text-sm font-medium uppercase tracking-widest hover:text-white transition-colors">
+              CONTACT
             </a>
           </div>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden text-white p-2"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
-      )}
-    </nav>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="lg:hidden mt-6 bg-black/90 backdrop-blur-xl rounded-2xl p-6 border border-white/10">
+            <div className="space-y-4">
+              <a href="#home" onClick={() => setIsOpen(false)} className="block text-white text-sm font-semibold uppercase tracking-widest">
+                HOME
+              </a>
+              <a href="#about" onClick={() => setIsOpen(false)} className="block text-white/50 text-sm font-medium uppercase tracking-widest">
+                ABOUT
+              </a>
+              <a href="#services" onClick={() => setIsOpen(false)} className="block text-white/50 text-sm font-medium uppercase tracking-widest">
+                SERVICES
+              </a>
+              <a href="#testimonials" onClick={() => setIsOpen(false)} className="block text-white/50 text-sm font-medium uppercase tracking-widest">
+                TESTIMONIALS
+              </a>
+              <a href="#contact" onClick={() => setIsOpen(false)} className="block text-white/50 text-sm font-medium uppercase tracking-widest">
+                CONTACT
+              </a>
+            </div>
+          </div>
+        )}
+      </nav>
+    </>
   )
 }
 
