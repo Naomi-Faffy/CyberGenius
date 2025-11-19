@@ -1,9 +1,9 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center">
-      {/* Background Image */}
+    <section id="home" className="relative min-h-screen flex items-center justify-center p-6 sm:p-8 lg:p-12">
+      {/* Background Image - Red Circuit Board */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1657622185369-a5a0190f151e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw1fHxjaXJjdWl0JTIwYm9hcmQlMjByZWQlMjBwYXRod2F5cyUyMHRlY2hub2xvZ3klMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwwfDF8fHJlZHwxNzYzNTQ2MjAwfDA&ixlib=rb-4.1.0&q=85"
@@ -15,109 +15,106 @@ const Hero = () => {
             height: '100%'
           }}
         />
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50"></div>
+        {/* Overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-transparent"></div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      {/* Main Container - Following the reference design exactly */}
+      <div className="relative z-10 w-full max-w-[1400px] h-[85vh] min-h-[700px]">
+        {/* White bordered container like reference */}
+        <div className="relative w-full h-full rounded-[40px] border-[3px] border-white/40 overflow-hidden bg-black/20 backdrop-blur-sm">
           
-          {/* Left Column */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <p className="text-cyber-red text-sm font-semibold uppercase tracking-widest">
-                Cybersecurity Excellence
+          {/* Content Grid */}
+          <div className="relative h-full grid grid-cols-1 lg:grid-cols-2 p-8 lg:p-12">
+            
+            {/* Left Column - Like "AFRICAN FOREST" */}
+            <div className="flex flex-col justify-center space-y-8">
+              <div>
+                <p className="text-white/90 text-sm font-medium uppercase tracking-widest mb-6">
+                  Cybersecurity Excellence
+                </p>
+                
+                {/* Large Typography - Split like "AFRI CAN FOREST" */}
+                <h1 
+                  className="font-black leading-[0.9] mb-2"
+                  style={{ 
+                    fontSize: 'clamp(60px, 12vw, 140px)',
+                    color: 'rgba(255, 255, 255, 0.15)',
+                    WebkitTextStroke: '2px rgba(255, 255, 255, 0.8)'
+                  }}
+                >
+                  CYBER
+                </h1>
+                <h1 
+                  className="text-white font-black leading-[0.9]"
+                  style={{ fontSize: 'clamp(60px, 12vw, 140px)' }}
+                >
+                  SECURITY
+                </h1>
+              </div>
+
+              {/* Quote text like reference */}
+              <p className="text-white/80 text-sm italic max-w-md leading-relaxed">
+                There is a moment in the life of any aspiring organization that it is time 
+                to secure their digital future.
               </p>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight">
-                SECURE
-                <br />
-                YOUR
-                <br />
-                <span className="text-cyber-red">DIGITAL</span>
-                <br />
-                FUTURE
-              </h1>
+
+              <button className="inline-flex items-center text-white text-sm font-medium uppercase tracking-wider hover:text-cyber-red transition-colors w-fit">
+                Learn More
+                <ArrowRight className="ml-2" size={16} />
+              </button>
             </div>
 
-            <p className="text-white/80 text-lg leading-relaxed max-w-xl">
-              Bridging communities and technology across Africa. We deliver world-class 
-              cybersecurity, governance, and digital transformation services tailored to 
-              your business needs.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#services"
-                className="inline-flex items-center justify-center px-8 py-4 bg-cyber-red hover:bg-cyber-red-bright text-white font-semibold rounded-sm transition-all duration-300 hover:scale-105"
-              >
-                Explore Services
-                <ArrowRight className="ml-2" size={20} />
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 hover:border-white text-white font-semibold rounded-sm transition-all duration-300"
-              >
-                Get in Touch
-              </a>
-            </div>
-          </div>
-
-          {/* Right Column */}
-          <div className="space-y-6">
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm p-8">
-              <div className="space-y-6">
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-1 h-8 bg-cyber-red"></div>
-                    <h3 className="text-2xl font-bold text-white">Our Mission</h3>
+            {/* Right Column - Info Card like reference tour card */}
+            <div className="flex flex-col justify-end lg:justify-center lg:items-end">
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 max-w-md">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-cyber-red rounded-full"></div>
+                    <span className="text-cyber-red text-xs font-bold uppercase tracking-wider">
+                      Premium Protection
+                    </span>
                   </div>
-                  <p className="text-white/70 leading-relaxed">
-                    To deliver world-class security, governance, and transformation services, 
-                    tailored to the African business environment, while upholding integrity, 
-                    excellence, teamwork, and Ubuntu.
+                  
+                  <h3 className="text-white font-bold text-xl">
+                    Advanced Cybersecurity Solutions
+                  </h3>
+                  
+                  <p className="text-white/70 text-sm leading-relaxed">
+                    Bridging communities and technology across Africa. We deliver world-class 
+                    cybersecurity, governance, and digital transformation services tailored to 
+                    the African business environment.
                   </p>
-                </div>
 
-                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
-                  <div>
-                    <p className="text-3xl font-bold text-cyber-red">4</p>
-                    <p className="text-white/60 text-sm">Service Pillars</p>
-                  </div>
-                  <div>
-                    <p className="text-3xl font-bold text-cyber-red">24/7</p>
-                    <p className="text-white/60 text-sm">Support</p>
-                  </div>
-                  <div>
-                    <p className="text-3xl font-bold text-cyber-red">100%</p>
-                    <p className="text-white/60 text-sm">Commitment</p>
-                  </div>
-                  <div>
-                    <p className="text-3xl font-bold text-cyber-red">Africa</p>
-                    <p className="text-white/60 text-sm">Wide Reach</p>
-                  </div>
+                  <button className="mt-2 px-6 py-2.5 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-full border border-white/20 transition-all">
+                    View Details
+                  </button>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="bg-cyber-red/10 backdrop-blur-sm border border-cyber-red/30 rounded-sm p-6">
-              <p className="text-white/90 text-sm italic">
-                "Ubuntu – We serve communities, not just companies. Our currency is trust, 
-                and excellence is our standard."
-              </p>
+          {/* Navigation Controls - Right side like reference */}
+          <div className="absolute bottom-8 right-8 lg:bottom-12 lg:right-12 flex items-center gap-4">
+            {/* Vertical dots */}
+            <div className="flex flex-col gap-3">
+              <button className="w-3 h-3 rounded-full bg-white"></button>
+              <button className="w-3 h-3 rounded-full bg-white/30 hover:bg-white/60 transition-all"></button>
+              <button className="w-3 h-3 rounded-full bg-white/30 hover:bg-white/60 transition-all"></button>
+              <button className="w-3 h-3 rounded-full bg-white/30 hover:bg-white/60 transition-all"></button>
+            </div>
+
+            {/* Arrow buttons */}
+            <div className="flex gap-2">
+              <button className="w-12 h-12 rounded-sm bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+                <ChevronLeft className="text-white" size={20} />
+              </button>
+              <button className="w-12 h-12 rounded-sm bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all">
+                <ChevronRight className="text-white" size={20} />
+              </button>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <a href="#services" className="flex flex-col items-center gap-2 text-white/60 hover:text-white transition-colors">
-          <span className="text-xs uppercase tracking-wider">Scroll</span>
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-2 bg-white/60 rounded-full animate-bounce"></div>
-          </div>
-        </a>
       </div>
     </section>
   )
