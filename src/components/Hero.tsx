@@ -3,10 +3,11 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 const Hero = () => {
   return (
     <section id="home" className="relative w-full h-screen overflow-hidden">
-      {/* Background - Split into two halves */}
-      <div className="absolute inset-0">
-        {/* Left Half - Blurred, dark, glassmorphism base */}
-        <div className="absolute top-0 left-0 w-1/2 h-full">
+      {/* Background - Split Design */}
+      <div className="absolute inset-0 flex">
+        {/* LEFT HALF - Blurred, dark, glassmorphism */}
+        <div className="w-1/2 h-full relative">
+          {/* Background image - blurred */}
           <div 
             className="absolute inset-0"
             style={{
@@ -16,19 +17,19 @@ const Hero = () => {
               filter: 'blur(10px) brightness(0.25) saturate(0.5)'
             }}
           />
-          {/* Glassmorphism overlay */}
+          {/* Translucent overlay with gradient - glassmorphism */}
           <div 
             className="absolute inset-0"
             style={{
-              background: 'linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2))',
+              background: 'linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25))',
               backdropFilter: 'blur(6px)',
               WebkitBackdropFilter: 'blur(6px)'
             }}
           />
         </div>
 
-        {/* Right Half - Bright, crisp, no blur */}
-        <div className="absolute top-0 right-0 w-1/2 h-full">
+        {/* RIGHT HALF - Bright, crisp, no blur */}
+        <div className="w-1/2 h-full relative">
           <div 
             className="absolute inset-0"
             style={{
@@ -40,7 +41,7 @@ const Hero = () => {
           />
         </div>
 
-        {/* Center glass edge highlight */}
+        {/* CENTER VERTICAL GLASS EDGE - light reflection glow */}
         <div 
           className="absolute top-0 bottom-0 left-1/2 w-px"
           style={{
@@ -51,17 +52,20 @@ const Hero = () => {
         />
       </div>
 
-      {/* Content Container */}
-      <div className="relative z-10 h-full flex flex-col">
-        {/* Main Content - Vertically Centered */}
-        <div className="flex-1 flex items-center px-16 xl:px-24">
-          <div className="w-full max-w-[1920px] mx-auto">
-            {/* Left side content only */}
-            <div className="max-w-3xl">
-              {/* Section Label */}
+      {/* CONTENT */}
+      <div className="relative z-10 h-full flex flex-col px-16 xl:px-20">
+        
+        {/* MAIN CONTENT - Vertically centered */}
+        <div className="flex-1 flex items-center">
+          <div className="w-full max-w-[1800px] mx-auto">
+            
+            {/* Left side content */}
+            <div className="max-w-4xl">
+              
+              {/* SECTION LABEL - "AMAZING TRIPS" equivalent */}
               <p 
-                className="text-white/80 mb-8"
-                style={{ 
+                className="text-white/80 mb-10"
+                style={{
                   fontFamily: 'Montserrat, sans-serif',
                   fontSize: '14px',
                   fontWeight: 300,
@@ -72,17 +76,18 @@ const Hero = () => {
                 AMAZING SOLUTIONS
               </p>
 
-              {/* Main Headline */}
-              <div className="mb-12">
+              {/* MAIN HEADLINE - Split typography like "AFRI CAN FOREST" */}
+              <div className="mb-14">
                 {/* First line: CYBER (textured) + SECURITY (white) */}
-                <div className="flex flex-wrap items-baseline gap-8 mb-4">
+                <div className="flex flex-wrap items-baseline gap-x-10 mb-2">
+                  {/* CYBER - textured like "AFRIC" */}
                   <h1 
                     style={{
                       fontFamily: 'Bebas Neue, sans-serif',
-                      fontSize: 'clamp(120px, 22vw, 320px)',
+                      fontSize: 'clamp(140px, 24vw, 360px)',
                       fontWeight: 400,
                       lineHeight: 0.85,
-                      letterSpacing: '0.02em',
+                      letterSpacing: '0.01em',
                       backgroundImage: 'url(https://images.unsplash.com/photo-1657622185369-a5a0190f151e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw1fHxjaXJjdWl0JTIwYm9hcmQlMjByZWQlMjBwYXRod2F5cyUyMHRlY2hub2xvZ3klMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwwfDF8fHJlZHwxNzYzNTQ2MjAwfDA&ixlib=rb-4.1.0&q=85)',
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
@@ -94,28 +99,33 @@ const Hero = () => {
                   >
                     CYBER
                   </h1>
+                </div>
+
+                {/* Second line: SECURITY (white) + SOLUTIONS (textured) */}
+                <div className="flex flex-wrap items-baseline gap-x-10">
+                  {/* SECURITY - white like "CAN" */}
                   <h1 
                     className="text-white"
                     style={{
                       fontFamily: 'Bebas Neue, sans-serif',
-                      fontSize: 'clamp(120px, 22vw, 320px)',
+                      fontSize: 'clamp(140px, 24vw, 360px)',
                       fontWeight: 400,
                       lineHeight: 0.85,
-                      letterSpacing: '0.02em'
+                      letterSpacing: '0.01em'
                     }}
                   >
                     SECURITY
                   </h1>
                 </div>
 
-                {/* Second line: SOLUTIONS (textured, larger) */}
+                {/* Third line: SOLUTIONS (textured like "FOREST") */}
                 <h1 
                   style={{
                     fontFamily: 'Bebas Neue, sans-serif',
-                    fontSize: 'clamp(130px, 24vw, 350px)',
+                    fontSize: 'clamp(150px, 26vw, 380px)',
                     fontWeight: 400,
                     lineHeight: 0.85,
-                    letterSpacing: '0.02em',
+                    letterSpacing: '0.01em',
                     backgroundImage: 'url(https://images.unsplash.com/photo-1657622185369-a5a0190f151e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw1fHxjaXJjdWl0JTIwYm9hcmQlMjByZWQlMjBwYXRod2F5cyUyMHRlY2hub2xvZ3klMjBkYXJrJTIwYmFja2dyb3VuZHxlbnwwfDF8fHJlZHwxNzYzNTQ2MjAwfDA&ixlib=rb-4.1.0&q=85)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
@@ -129,9 +139,9 @@ const Hero = () => {
                 </h1>
               </div>
 
-              {/* Subtext - Elegant serif */}
+              {/* SUBTEXT - Elegant serif italic */}
               <p 
-                className="text-white/75 mb-10 max-w-xl"
+                className="text-white/75 mb-12 max-w-xl"
                 style={{
                   fontFamily: 'Playfair Display, serif',
                   fontSize: '20px',
@@ -143,7 +153,7 @@ const Hero = () => {
                 There is a moment in the life of any aspiring organization that it is time to secure their digital future.
               </p>
 
-              {/* CTA */}
+              {/* CTA - "LEARN MORE" */}
               <a 
                 href="#services"
                 className="inline-block text-white hover:text-cyber-red-neon transition-colors"
@@ -163,10 +173,11 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="px-16 xl:px-24 pb-16">
-          <div className="w-full max-w-[1920px] mx-auto flex items-end justify-between">
-            {/* Info Card - Bottom Left */}
+        {/* BOTTOM SECTION */}
+        <div className="pb-16">
+          <div className="w-full max-w-[1800px] mx-auto flex items-end justify-between">
+            
+            {/* INFO CARD - Bottom left with glassmorphism */}
             <div 
               className="rounded-3xl p-10 max-w-lg"
               style={{
@@ -218,7 +229,7 @@ const Hero = () => {
               </p>
 
               <button 
-                className="px-8 py-3.5 text-white rounded-full transition-all"
+                className="px-8 py-3.5 text-white rounded-full transition-all hover:bg-white/20"
                 style={{
                   fontFamily: 'Montserrat, sans-serif',
                   fontSize: '14px',
@@ -232,9 +243,10 @@ const Hero = () => {
               </button>
             </div>
 
-            {/* Navigation Controls - Bottom Right */}
+            {/* NAVIGATION CONTROLS - Bottom right */}
             <div className="flex items-center gap-6">
-              {/* Vertical slider indicator */}
+              
+              {/* Vertical slider indicator with diamonds */}
               <div className="flex flex-col items-center gap-5 relative">
                 <div 
                   className="w-px h-32 absolute top-0"
@@ -243,7 +255,7 @@ const Hero = () => {
                   }}
                 />
                 <button 
-                  className="w-4 h-4 rotate-45 relative z-10 transition-all"
+                  className="w-4 h-4 rotate-45 relative z-10 transition-all hover:border-white"
                   style={{
                     background: 'transparent',
                     border: '2px solid rgba(255, 255, 255, 0.5)',
@@ -261,7 +273,7 @@ const Hero = () => {
                   }}
                 />
                 <button 
-                  className="w-4 h-4 rotate-45 relative z-10 transition-all"
+                  className="w-4 h-4 rotate-45 relative z-10 transition-all hover:border-white"
                   style={{
                     background: 'transparent',
                     border: '2px solid rgba(255, 255, 255, 0.5)',
@@ -271,10 +283,11 @@ const Hero = () => {
                 />
               </div>
 
-              {/* Arrow buttons */}
+              {/* Arrow buttons - different backgrounds */}
               <div className="flex gap-3">
+                {/* Left arrow - lighter background */}
                 <button 
-                  className="w-16 h-16 rounded-lg flex items-center justify-center transition-all"
+                  className="w-16 h-16 rounded-lg flex items-center justify-center transition-all hover:bg-white/25"
                   style={{
                     background: 'rgba(255, 255, 255, 0.15)',
                     backdropFilter: 'blur(10px)',
@@ -284,8 +297,9 @@ const Hero = () => {
                 >
                   <ChevronLeft className="text-white" size={28} strokeWidth={1.5} />
                 </button>
+                {/* Right arrow - darker background */}
                 <button 
-                  className="w-16 h-16 rounded-lg flex items-center justify-center transition-all"
+                  className="w-16 h-16 rounded-lg flex items-center justify-center transition-all hover:bg-black/70"
                   style={{
                     background: 'rgba(0, 0, 0, 0.5)',
                     backdropFilter: 'blur(10px)',
@@ -301,7 +315,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Right-side vertical indicator */}
+      {/* RIGHT-SIDE VERTICAL INDICATOR */}
       <div className="absolute right-16 top-1/2 -translate-y-1/2 z-20 hidden xl:block">
         <div className="flex flex-col items-center gap-6">
           <div 
@@ -311,7 +325,7 @@ const Hero = () => {
             }}
           />
           <button 
-            className="w-4 h-4 rotate-45 transition-all"
+            className="w-4 h-4 rotate-45 transition-all hover:border-white"
             style={{
               background: 'transparent',
               border: '2px solid rgba(255, 255, 255, 0.5)',
@@ -329,7 +343,7 @@ const Hero = () => {
             }}
           />
           <button 
-            className="w-4 h-4 rotate-45 transition-all"
+            className="w-4 h-4 rotate-45 transition-all hover:border-white"
             style={{
               background: 'transparent',
               border: '2px solid rgba(255, 255, 255, 0.5)',
