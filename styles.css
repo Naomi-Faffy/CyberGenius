@@ -13,56 +13,33 @@ body {
     position: relative;
 }
 
-/* Full Forest Background - No Split */
+/* Background Image */
 .hero-background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://images.unsplash.com/photo-1647900771577-6906a948762f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw3fHxmb3Jlc3QlMjB0cmVlcyUyMHN1bmxpZ2h0JTIwbWlzdCUyMGp1bmdsZXxlbnwwfDB8fGdyZWVufDE3NjM1NTMxMzJ8MA&ixlib=rb-4.1.0&q=85');
+    background-image: url('./cfa643fea81568fa48ab9aa4ed627494 (1).jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(0.85) contrast(1.15) saturate(1.2);
+    filter: brightness(0.9) contrast(1.1);
     z-index: 0;
 }
 
-/* Dark overlay for better text contrast */
+/* Dark overlay for better contrast */
 .hero-background::before {
     content: '';
     position: absolute;
     inset: 0;
     background: radial-gradient(
         ellipse at center,
-        rgba(0, 0, 0, 0.25) 0%,
-        rgba(0, 0, 0, 0.45) 100%
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.5) 100%
     );
     z-index: 1;
 }
 
-/* Leaf Decorations Above Logo */
-.leaf-decoration-top {
-    position: fixed;
-    top: 28px;
-    left: 62px;
-    z-index: 100;
-    display: flex;
-    gap: 12px;
-}
-
-.leaf-top {
-    color: #10b981;
-    filter: drop-shadow(0 2px 6px rgba(16, 185, 129, 0.4));
-    opacity: 0.95;
-}
-
-.leaf-top:first-child {
-    transform: rotate(-20deg);
-}
-
-.leaf-top:last-child {
-    transform: rotate(15deg);
-}
 
 /* Header */
 .header {
@@ -93,39 +70,13 @@ body {
     margin-bottom: 4px;
 }
 
-.logo-afri {
+.logo-cyber {
     color: #fff;
 }
 
-.logo-can {
-    color: #10b981;
-    text-shadow: 0 0 25px rgba(16, 185, 129, 0.5);
-}
-
-.logo-journey {
-    color: #fff;
-}
-
-/* Leaf decorations above tagline */
-.leaf-decoration-tagline {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 5px;
-    margin-left: 3px;
-}
-
-.leaf-small {
-    color: #10b981;
-    filter: drop-shadow(0 1px 4px rgba(16, 185, 129, 0.3));
-    opacity: 0.9;
-}
-
-.leaf-small:first-child {
-    transform: rotate(-15deg);
-}
-
-.leaf-small:last-child {
-    transform: rotate(20deg);
+.logo-genius {
+    color: #ff3333;
+    text-shadow: 0 0 25px rgba(255, 51, 51, 0.5);
 }
 
 .tagline {
@@ -138,7 +89,7 @@ body {
 }
 
 .tagline-highlight {
-    color: #10b981;
+    color: #ff3333;
 }
 
 /* Navigation */
@@ -223,12 +174,40 @@ body {
     line-height: 0.88;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+}
+
+/* CYBER - Solid white */
+.title-cyber {
     color: #fff;
     text-shadow: 
         0 4px 24px rgba(0, 0, 0, 0.6),
         0 0 50px rgba(255, 255, 255, 0.25);
-    margin: 0;
-    padding: 0;
+}
+
+/* GENIUS - Knockout/Carved Effect */
+.title-genius {
+    position: relative;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.9);
+    text-stroke: 2px rgba(255, 255, 255, 0.9);
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.6))
+            drop-shadow(0 4px 20px rgba(0, 0, 0, 0.8));
+}
+
+/* Create the glow/blur behind the knockout text */
+.title-genius::before {
+    content: 'GENIUS';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: transparent;
+    -webkit-text-stroke: 3px rgba(255, 255, 255, 0.4);
+    text-stroke: 3px rgba(255, 255, 255, 0.4);
+    filter: blur(8px);
+    z-index: -1;
 }
 
 .hero-description {
@@ -433,8 +412,4 @@ body {
         font-size: clamp(60px, 10vw, 100px);
     }
     
-    .leaf-decoration-top,
-    .leaf-decoration-tagline {
-        display: none;
-    }
 }
