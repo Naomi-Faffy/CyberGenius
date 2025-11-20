@@ -39,8 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const getScrollAmount = () => {
             const card = track.querySelector('.testimonial-card');
             if (card) {
-                // card width + gap (30px)
-                return card.offsetWidth + 30;
+                const style = window.getComputedStyle(track);
+                const gap = parseInt(style.gap || style.columnGap || 30);
+                return card.offsetWidth + gap;
             }
             return 350; // fallback
         };

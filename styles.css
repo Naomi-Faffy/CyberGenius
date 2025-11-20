@@ -1059,3 +1059,100 @@ body {
         flex: 0 0 280px; /* Fixed width for mobile */
     }
 }
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .header { padding: 20px 40px; }
+    .main-content { padding: 0 60px; }
+    .glass-panel { padding: 50px; }
+    .title-line { font-size: 120px; }
+    
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .service-card, .service-card.wide { grid-column: span 1; }
+    /* Make the last card span 2 if odd number, or just keep 1 */
+    .service-card:last-child { grid-column: span 2; }
+    
+    .about-infographic-complex { gap: 60px; }
+    .top-row { flex-direction: column; gap: 60px; }
+    .main-graphic, .side-stats { width: 100%; }
+    .main-graphic { height: 400px; }
+    
+    .bottom-row { flex-wrap: wrap; gap: 20px; }
+    .bottom-card { width: 45%; }
+    .connector-line, .bottom-card::before { display: none; }
+    
+    .contact-content-wrapper { grid-template-columns: 1fr; }
+    
+    .footer-content { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+    /* Header & Nav */
+    .header { 
+        padding: 20px; 
+        flex-direction: column; 
+        align-items: center; 
+        background: rgba(0,0,0,0.8); /* Add background for readability */
+        backdrop-filter: blur(10px);
+    }
+    .logo-image { height: 100px; }
+    .main-nav { 
+        gap: 15px; 
+        flex-wrap: wrap; 
+        margin-bottom: 30px; 
+    }
+    .nav-link { font-size: 12px; }
+    
+    /* Hero */
+    .main-content { padding: 140px 20px 60px; /* Add top padding for fixed header */ }
+    .glass-panel { padding: 30px 20px; }
+    .title-line { font-size: 60px; }
+    .hero-description { font-size: 14px; margin-bottom: 30px; }
+    .hero-label { margin-bottom: 30px; }
+    
+    /* Services */
+    .services-section { padding: 60px 20px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card, .service-card.wide, .service-card:last-child { grid-column: span 1; }
+    .services-title { font-size: 32px; }
+    
+    /* About */
+    .about-section { padding: 60px 20px; }
+    .about-title { font-size: 32px; }
+    .info-circle { width: 160px; height: 160px; }
+    .info-circle h3 { font-size: 32px; }
+    .info-node { width: 160px; padding: 10px; }
+    .info-node h4 { font-size: 14px; }
+    .line-1, .line-2, .line-3 { display: none; } /* Hide lines on mobile */
+    
+    .stats-grid { flex-direction: column; align-items: flex-start; height: auto; gap: 30px; }
+    .stats-list { width: 100%; height: auto; gap: 15px; }
+    .bar-chart { width: 100%; padding: 0; border: none; height: 120px; }
+    .percentage-row { flex-wrap: wrap; gap: 10px; }
+    .bottom-card { width: 100%; }
+    
+    /* Testimonials */
+    .testimonials-section { padding: 60px 0; }
+    .testimonials-title { font-size: 32px; }
+    .testimonials-container { padding: 0 20px; }
+    .testimonial-card { 
+        flex: 0 0 85vw; /* Show 1 card */
+        min-width: auto; 
+        padding: 40px 20px;
+    }
+    .testimonials-track { gap: 15px; }
+    
+    /* Contact */
+    .contact-section { padding: 60px 20px; }
+    .contact-header h2 { font-size: 32px; }
+    .contact-info-glass, .glass-form-container { padding: 30px 20px; }
+    
+    /* Footer */
+    .footer-content { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+    .footer-brand p { margin: 0 auto 20px; }
+    .footer-col h4 { margin-bottom: 15px; }
+    .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+    .social-links { justify-content: center; }
+    
+    /* WhatsApp */
+    .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+}
