@@ -96,7 +96,8 @@ body {
 .main-nav {
     display: flex;
     gap: 50px;
-    padding-top: 18px;
+    justify-content: center;
+    margin-bottom: 45px;
 }
 
 .nav-link {
