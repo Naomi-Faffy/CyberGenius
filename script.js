@@ -13,19 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Diamond slider indicators (just for visual feedback)
-    const diamonds = document.querySelectorAll('.diamond, .diamond-right');
-    diamonds.forEach((diamond, index) => {
-        diamond.addEventListener('click', () => {
-            const parent = diamond.parentElement;
-            parent.querySelectorAll('.diamond, .diamond-right').forEach(d => {
-                d.classList.remove('active');
-            });
-            diamond.classList.add('active');
-        });
-    });
-
-    console.log('African Journey page loaded successfully');
+    console.log('Cyber Genius page loaded successfully');
 
     // Logo visibility on scroll
     const logo = document.querySelector('.logo-image');
@@ -47,16 +35,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.querySelector('.next-slide');
 
     if (track && prevBtn && nextBtn) {
+        // Calculate scroll amount based on card width + gap
+        const getScrollAmount = () => {
+            const card = track.querySelector('.testimonial-card');
+            if (card) {
+                // card width + gap (30px)
+                return card.offsetWidth + 30;
+            }
+            return 350; // fallback
+        };
+
         nextBtn.addEventListener('click', () => {
             track.scrollBy({
-                left: 390, // card width + gap
+                left: getScrollAmount(),
                 behavior: 'smooth'
             });
         });
 
         prevBtn.addEventListener('click', () => {
             track.scrollBy({
-                left: -390,
+                left: -getScrollAmount(),
                 behavior: 'smooth'
             });
         });
