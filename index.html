@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>African Journey</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,23 +16,24 @@
     <!-- Header -->
     <header class="header">
         <div class="logo-container">
+            <img src="logo.png" alt="Cyber Genius Logo" class="logo-image">
         </div>
     </header>
 
     <!-- Centered Hero Content with Glass Panel -->
-    <main class="main-content">
+    <main class="main-content" id="home">
         <div class="glass-panel">
             <nav class="main-nav">
                 <a href="#home" class="nav-link active">HOME</a>
-                <a href="#about" class="nav-link">ABOUT</a>
                 <a href="#services" class="nav-link">SERVICES</a>
+                <a href="#about" class="nav-link">ABOUT</a>
                 <a href="#testimonials" class="nav-link">TESTIMONIALS</a>
                 <a href="#contact" class="nav-link">CONTACT</a>
             </nav>
 
             <div class="hero-title-centered">
                 <h2 class="title-line title-cyber">CYBER</h2>
-                <h2 class="title-line title-genius" style="color: #ffffff08;">GENIUS</h2>
+                <h2 class="title-line title-genius">GENI<span class="genius-us">US</span></h2>
             </div>
 
             <p class="hero-description">
@@ -43,23 +45,342 @@
         </div>
     </main>
 
-    <!-- Right side decorative elements -->
-    <div class="side-decoration">
-    </div>
+    <!-- Services Section (Updated with Icons) -->
+    <section id="services" class="services-section">
+        <div class="services-container">
+            <div class="services-header">
+                <h2 class="services-title">SECURE & <span class="text-highlight">PROTECT</span> YOUR ASSETS</h2>
+                <p class="services-subtitle">
+                    Comprehensive cybersecurity solutions tailored to safeguard your digital infrastructure.
+                    We leverage cutting-edge technology to stay ahead of threats.
+                </p>
+            </div>
 
-    <!-- Bottom navigation arrows -->
-    <div class="bottom-nav">
-        <button class="nav-arrow prev-arrow">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M15 18l-6-6 6-6"/>
-            </svg>
-        </button>
-        <button class="nav-arrow next-arrow">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 18l6-6-6-6"/>
-            </svg>
-        </button>
-    </div>
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="hgi-stroke hgi-iris-scan"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Threat Detection</h3>
+                        <p>Real-time monitoring and automated threat identification to neutralize risks before they escalate.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="hgi-stroke hgi-firewall"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Network Security</h3>
+                        <p>Robust firewall implementation and secure network architecture design for maximum protection.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="hgi-stroke hgi-encrypt"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Data Encryption</h3>
+                        <p>Advanced encryption protocols to ensure your sensitive data remains private and secure.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="service-card wide">
+                    <div class="card-icon">
+                        <i class="hgi-stroke hgi-cloud-server"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Cloud Security Integration</h3>
+                        <p>Seamless security integration for your cloud infrastructure, ensuring compliance and safety across all platforms.</p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="service-card wide">
+                    <div class="card-icon">
+                        <i class="hgi-stroke hgi-alert-02"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Incident Response</h3>
+                        <p>Rapid response teams and protocols to manage and mitigate security breaches effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-header">
+                <h2 class="about-title">ABOUT <span class="text-highlight">US</span></h2>
+                <p class="about-subtitle">Pioneering the future of digital security with innovation and integrity.</p>
+            </div>
+            
+            <div class="about-infographic-complex">
+                <div class="top-row">
+                    <!-- Left: Main Circular Graphic -->
+                    <div class="main-graphic">
+                        <div class="info-center">
+                            <div class="info-circle">
+                                <h3>OUR<br>MISSION</h3>
+                            </div>
+                        </div>
+                        
+                        <!-- Nodes -->
+                        <div class="info-node node-1">
+                            <h4>STRATEGY</h4>
+                            <p>Proactive threat elimination.</p>
+                        </div>
+                        <div class="info-node node-2">
+                            <h4>VISION</h4>
+                            <p>A secure digital world for all.</p>
+                        </div>
+                        <div class="info-node node-3">
+                            <h4>TEAM</h4>
+                            <p>Elite security experts.</p>
+                        </div>
+
+                        <!-- Lines -->
+                        <div class="info-line line-1"></div>
+                        <div class="info-line line-2"></div>
+                        <div class="info-line line-3"></div>
+                    </div>
+
+                    <!-- Right: Stats & Charts -->
+                    <div class="side-stats">
+                        <div class="stats-header">
+                            <h3>PERFORMANCE METRICS</h3>
+                            <p>Continuous improvement and analysis.</p>
+                        </div>
+                        
+                        <div class="stats-grid">
+                            <!-- List -->
+                            <ul class="stats-list">
+                                <li><span class="bullet"></span> THREAT PREVENTION</li>
+                                <li><span class="bullet"></span> SYSTEM UPTIME</li>
+                                <li><span class="bullet"></span> CLIENT SATISFACTION</li>
+                                <li><span class="bullet"></span> RESPONSE TIME</li>
+                            </ul>
+
+                            <!-- Bar Chart -->
+                            <div class="bar-chart">
+                                <div class="bar-col">
+                                    <div class="bar" style="height: 60%;"></div>
+                                </div>
+                                <div class="bar-col">
+                                    <div class="bar" style="height: 85%;"></div>
+                                </div>
+                                <div class="bar-col">
+                                    <div class="bar" style="height: 45%;"></div>
+                                </div>
+                                <div class="bar-col">
+                                    <div class="bar" style="height: 95%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Percentage Circles -->
+                        <div class="percentage-row">
+                            <div class="perc-item">
+                                <div class="perc-circle">
+                                    <svg viewBox="0 0 36 36">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle" stroke-dasharray="98, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                    <div class="perc-text">98%</div>
+                                </div>
+                                <span>UPTIME</span>
+                            </div>
+                            <div class="perc-item">
+                                <div class="perc-circle">
+                                    <svg viewBox="0 0 36 36">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                    <div class="perc-text">85%</div>
+                                </div>
+                                <span>GROWTH</span>
+                            </div>
+                            <div class="perc-item">
+                                <div class="perc-circle">
+                                    <svg viewBox="0 0 36 36">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                    <div class="perc-text">24/7</div>
+                                </div>
+                                <span>SUPPORT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Row: 4 Cards -->
+                <div class="bottom-row">
+                    <div class="connector-line"></div>
+                    <div class="bottom-card">
+                        <h4>ANALYSIS</h4>
+                        <p>Deep dive into security logs.</p>
+                    </div>
+                    <div class="bottom-card">
+                        <h4>PLANNING</h4>
+                        <p>Strategic defense mapping.</p>
+                    </div>
+                    <div class="bottom-card">
+                        <h4>EXECUTION</h4>
+                        <p>Flawless implementation.</p>
+                    </div>
+                    <div class="bottom-card">
+                        <h4>REVIEW</h4>
+                        <p>Post-incident auditing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="testimonials-container">
+            <div class="testimonials-header">
+                <h2 class="testimonials-title">CLIENT <span class="text-highlight">STORIES</span></h2>
+                <p class="testimonials-subtitle">Hear from those who have secured their future with Cyber Genius.</p>
+            </div>
+
+            <div class="testimonials-slider-wrapper">
+                <div class="testimonials-track">
+                    <!-- Card 1 -->
+                    <div class="testimonial-card">
+                        <div class="avatar-circle">J</div>
+                        <p class="testimonial-text">"Cyber Genius transformed our security infrastructure. Their proactive threat detection saved us from a major breach last quarter."</p>
+                        <div class="client-info">
+                            <h4>James Wilson</h4>
+                            <span>CTO, TechFlow</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="testimonial-card active">
+                        <div class="avatar-circle">S</div>
+                        <p class="testimonial-text">"The level of detail and professionalism is unmatched. The team is responsive, knowledgeable, and truly dedicated to our safety."</p>
+                        <div class="client-info">
+                            <h4>Sarah Jenkins</h4>
+                            <span>Director, SecureNet</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="testimonial-card">
+                        <div class="avatar-circle">M</div>
+                        <p class="testimonial-text">"We moved our entire cloud operation to their secure environment. The transition was seamless and the performance is incredible."</p>
+                        <div class="client-info">
+                            <h4>Michael Chen</h4>
+                            <span>CEO, CloudScale</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4 -->
+                    <div class="testimonial-card">
+                        <div class="avatar-circle">E</div>
+                        <p class="testimonial-text">"Best investment we've made. The ROI on security prevention is hard to calculate, but we sleep better at night."</p>
+                        <div class="client-info">
+                            <h4>Elena Rodriguez</h4>
+                            <span>VP Ops, GlobalTrade</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-controls">
+                    <button class="slider-arrow prev-slide" aria-label="Previous Slide">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button class="slider-arrow next-slide" aria-label="Next Slide">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>GET IN <span class="text-highlight">TOUCH</span></h2>
+                <p>Ready to secure your future? Contact us today.</p>
+            </div>
+
+            <div class="contact-content-wrapper">
+                <!-- Contact Info -->
+                <div class="contact-info-glass">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="hgi-stroke hgi-location-01"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>ADDRESS</h4>
+                            <p>123 Cyber Avenue, Tech District<br>Silicon Valley, CA 94025</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="hgi-stroke hgi-mail-01"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>EMAIL</h4>
+                            <p>contact@cybergenius.com<br>support@cybergenius.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="hgi-stroke hgi-clock-01"></i>
+                        </div>
+                        <div class="info-text">
+                            <h4>OPENING HOURS</h4>
+                            <p>Mon - Fri: 9:00 AM - 6:00 PM<br>Sat - Sun: Closed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="glass-form-container">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Cyber Genius. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">TW</a>
+                <a href="#">LI</a>
+                <a href="#">IG</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
